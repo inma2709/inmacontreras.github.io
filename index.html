@@ -299,7 +299,7 @@
   <!-- Bloque de imagen + botón -->
   <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;margin-bottom:1.5rem;">
     <figure style="max-width:280px;border-radius:20px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 6px 18px rgba(30,74,174,.12);">
-      <img src="cvinma.png" alt="curriculum — Inma Contreras" width="480" height="370">
+      <img src="cvinma.png" alt="curriculum — Inma Contreras" width="980" height="270">
     </figure>
 
     <a href="icidocentetic.pdf" download class="guardar" style="text-decoration:none;">
@@ -346,20 +346,184 @@
     </section>
   </div>
 </article>
+/* === Portfolio estático === */
+.projects-static{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+@media (min-width:720px){ .projects-static{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .projects-static{ grid-template-columns:repeat(3,1fr); } }
 
+.project-card{
+  background: linear-gradient(180deg, #ffffff 0%, #fff7fa 100%);
+  border:1px solid var(--color-border,#f0e5ef);
+  border-radius:18px;
+  box-shadow: 0 14px 40px rgba(30, 74, 174, .10);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.project-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 48px rgba(30, 74, 174, .16);
+}
 
-      <!-- PORTFOLIO -->
-      <article id="sec-portfolio" class="section" role="tabpanel" aria-labelledby="tab-portfolio" aria-hidden="true">
-        <h2 class="h2">Proyectos</h2>
-        <p class="lead">Prepara tus tarjetas del portfolio: sube una imagen, describe el proyecto y añade los enlaces a tu web/Netlify y a tu GitHub. Se guarda en tu navegador (localStorage).</p>
+.project-media{
+  aspect-ratio:16/10;
+  background:#faf5f7;
+  display:block;
+  overflow:hidden;
+}
+.project-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 
-        <section class="cards-editables" id="cards">
-          <!-- Se generan 6 tarjetas mediante JS si no existen -->
-        </section>
+.project-body{ padding:14px 14px 12px; display:flex; flex-direction:column; gap:.5rem; }
+.project-title{ margin:0; font-size:1.05rem; font-weight:600; color:var(--ink); }
+.project-desc{ margin:0; font-size:.92rem; color:var(--muted); }
 
-        <h3 class="h3" style="margin-top:16px">Vista previa</h3>
-        <div class="projects" id="previewGrid"></div>
-      </article>
+.project-links{ display:flex; gap:8px; flex-wrap:wrap; margin-top:.35rem; }
+.btn-chip{
+  display:inline-flex; align-items:center; gap:.4rem;
+  padding:.45rem .7rem; border-radius:999px; font-size:.85rem;
+  background:#ffffff; border:1px solid var(--color-border,#f0e5ef);
+  box-shadow: 0 6px 16px rgba(236,72,153,.10);
+}
+.btn-chip:hover{ box-shadow: 0 8px 18px rgba(236,72,153,.15); }
+.btn-chip ion-icon{ font-size:1rem; color:var(--rose-500,#ec4899); }
+
+.badge{
+  display:inline-flex; align-items:center; gap:.35rem;
+  font-size:.78rem; padding:.25rem .55rem; border-radius:999px;
+  background:#f0f6ff; color:#1e40af; border:1px solid #e6efff;
+}
+
+<!-- PORTFOLIO -->
+<article id="sec-portfolio" class="section" role="tabpanel" aria-labelledby="tab-portfolio" aria-hidden="true">
+  <h2 class="h2">Proyectos</h2>
+  <p class="lead">Una selección de trabajos docentes y materiales de apoyo para el aula (front-end y back-end).</p>
+
+  <section class="projects-static" aria-label="Listado de proyectos">
+
+    <!-- 1 -->
+    <article class="project-card">
+      <a class="project-media" href="https://animacionesybootstrap.netlify.app/l" target="_blank" rel="noreferrer">
+        <img src="htmlycss.png" alt="Curso HTML & CSS — portada">
+      </a>
+      <div class="project-body">
+        <h3 class="project-title">Curso HTML &amp; CSS <span class="badge"><ion-icon name="code-slash"></ion-icon>Front-end</span></h3>
+        <p class="project-desc">Fundamentos de maquetación, accesibilidad y buenas prácticas.</p>
+        <div class="project-links">
+          <a class="btn-chip" href="https://animacionesybootstrap.netlify.app/l" target="_blank" rel="noreferrer">
+            <ion-icon name="globe-outline"></ion-icon> Web / Netlify
+          </a>
+          <a class="btn-chip" href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer">
+            <ion-icon name="logo-github"></ion-icon> GitHub
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="project-card">
+      <a class="project-media" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer">
+        <img src="js.png" alt="Ahora JavaScript — portada">
+      </a>
+      <div class="project-body">
+        <h3 class="project-title">Ahora JavaScript <span class="badge"><ion-icon name="flash-outline"></ion-icon> JS</span></h3>
+        <p class="project-desc">Ejercicios y retos para afianzar JS desde cero a intermedio.</p>
+        <div class="project-links">
+          <a class="btn-chip" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer">
+            <ion-icon name="globe-outline"></ion-icon> Web / Netlify
+          </a>
+          <a class="btn-chip" href="https://github.com/inma2709/javascript" target="_blank" rel="noreferrer">
+            <ion-icon name="logo-github"></ion-icon> GitHub
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="project-card">
+      <a class="project-media" href="https://conreact.netlify.app/" target="_blank" rel="noreferrer">
+        <img src="react.png" alt="React — Componentes básicos — portada">
+      </a>
+      <div class="project-body">
+        <h3 class="project-title">React — Componentes básicos <span class="badge"><ion-icon name="logo-react"></ion-icon> React</span></h3>
+        <p class="project-desc">Estados, props y rutas con Vite para proyectos educativos.</p>
+        <div class="project-links">
+          <a class="btn-chip" href="https://conreact.netlify.app/" target="_blank" rel="noreferrer">
+            <ion-icon name="globe-outline"></ion-icon> Web / Netlify
+          </a>
+          <a class="btn-chip" href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer">
+            <ion-icon name="logo-github"></ion-icon> GitHub
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="project-card">
+      <a class="project-media" href="https://app.netlify.com/projects/usodegit/overview" target="_blank" rel="noreferrer">
+        <img src="git.png" alt="Git & GitHub para el aula — portada">
+      </a>
+      <div class="project-body">
+        <h3 class="project-title">Git &amp; GitHub para el aula <span class="badge"><ion-icon name="git-branch-outline"></ion-icon> Flujo</span></h3>
+        <p class="project-desc">Flujo de trabajo, commits, ramas y publicación en Pages.</p>
+        <div class="project-links">
+          <a class="btn-chip" href="https://app.netlify.com/projects/usodegit/overview" target="_blank" rel="noreferrer">
+            <ion-icon name="globe-outline"></ion-icon> Web / Netlify
+          </a>
+          <!-- Sin repo público especificado -->
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="project-card">
+      <a class="project-media" href="https://inmacontreras.com" target="_blank" rel="noreferrer">
+        <img src="logo.png" alt="Marca personal — Logo — portada">
+      </a>
+      <div class="project-body">
+        <h3 class="project-title">Marca personal — Logo <span class="badge"><ion-icon name="color-palette-outline"></ion-icon> Identidad</span></h3>
+        <p class="project-desc">Identidad visual y uso coherente en portfolio y redes.</p>
+        <div class="project-links">
+          <a class="btn-chip" href="https://inmacontreras.com" target="_blank" rel="noreferrer">
+            <ion-icon name="globe-outline"></ion-icon> Web
+          </a>
+          <a class="btn-chip" href="https://github.com/ici77" target="_blank" rel="noreferrer">
+            <ion-icon name="logo-github"></ion-icon> GitHub
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="project-card">
+      <a class="project-media" href="https://www.inmacontreras.com/#/curso/html" target="_blank" rel="noreferrer">
+        <img src="htmlycss.png" alt="Lenguajes de marcas — portada">
+      </a>
+      <div class="project-body">
+        <h3 class="project-title">Lenguajes de marcas <span class="badge"><ion-icon name="book-outline"></ion-icon> UF1841</span></h3>
+        <p class="project-desc">Contenidos y prácticas de HTML y CSS.</p>
+        <div class="project-links">
+          <a class="btn-chip" href="https://www.inmacontreras.com/#/curso/html" target="_blank" rel="noreferrer">
+            <ion-icon name="globe-outline"></ion-icon> Web
+          </a>
+          <a class="btn-chip" href="https://github.com/ici77" target="_blank" rel="noreferrer">
+            <ion-icon name="logo-github"></ion-icon> GitHub
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </section>
+</article>
 
       
 
