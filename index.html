@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inma Contreras — Portfolio</title>
-  <meta name="description" content="Portfolio de Inma Contreras: docente de desarrollo web, front-end y diseño accesible. Proyectos, formación y contacto." />
+  <meta name="description" content="Portfolio de Inma Contreras: docente de desarrollo web. Proyectos, formación y contacto." />
   <meta name="theme-color" content="#E44D26" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,32 +13,32 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <style>
     :root{
-      /* Paleta base inspirada en HTML5 + tus tokens */
-      --color-primary:#E44D26; /* naranja HTML */
-      --color-primary-2:#F16529; /* naranja claro */
-      --ink:#0f172a; /* texto oscuro en contenidos claros */
-      --paper:#0b0b0c; /* fondo general oscuro */
-      --panel:#121314; /* paneles */
-      --jet:#272727;
-      --muted:#bdbdbd;
-      --ring: var(--color-primary);
-      --radius: 14px;
+      /* Paleta suave y cercana (perfil docente de adultos) */
+      --rose-500:#ec4899;   /* acento principal */
+      --rose-400:#f472b6;   /* acento hover */
+      --plum-700:#6d28d9;   /* detalles secundarios */
+      --sand-25:#fff9fb;    /* fondo papel cálido */
+      --sand-50:#fff1f7;    /* panel muy claro */
+      --ink:#3a2d2f;        /* texto principal */
+      --muted:#6b6467;      /* texto secundario */
+      --ring: var(--rose-500);
+      --radius: 16px;
 
       /* Tipografía */
       --ff:'Poppins',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      --fs-1: clamp(1.4rem, 2vw, 1.75rem);
+      --fs-1: clamp(1.5rem, 2vw, 2rem);
       --fs-2: clamp(1.1rem, 1.5vw, 1.25rem);
       --fs-p: 1rem;
 
       /* Sombras & transiciones */
-      --shadow-1: 0 16px 40px rgba(0,0,0,.2);
+      --shadow-1: 0 20px 50px rgba(180, 31, 94, .12);
       --transition-1: .25s ease;
     }
 
     /* Reset mínimo accesible */
     *,*::before,*::after{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family:var(--ff);background:var(--paper);color:#fff;line-height:1.6}
+    body{margin:0;font-family:var(--ff);background:var(--sand-25);color:var(--ink);line-height:1.6}
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
     button{font:inherit;background:none;border:0;color:inherit;cursor:pointer}
@@ -50,62 +50,71 @@
       main{grid-template-columns:320px 1fr;align-items:start}
     }
 
-    .sidebar,.card{background:var(--panel);border:1px solid var(--jet);border-radius:20px;box-shadow:var(--shadow-1)}
+    .sidebar,.card{background:var(--sand-50);border:1px solid #ffe2ee;border-radius:24px;box-shadow:var(--shadow-1)}
     .sidebar{position:sticky;top:24px;padding:24px}
 
-    .avatar{border-radius:18px;overflow:hidden;border:1px solid #2a2a2a}
+    .avatar{border-radius:18px;overflow:hidden;border:1px solid #ffd4e6}
     .name{font-size:var(--fs-1);font-weight:600;margin:.75rem 0 .25rem}
-    .role{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;background:#191a1b;border:1px solid #26282a;border-radius:999px;padding:.35rem .65rem;color:#f1f5f9}
-    .role ion-icon{font-size:1rem;color:var(--color-primary-2)}
+    .role{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;background:white;border:1px solid #ffd4e6;border-radius:999px;padding:.45rem .75rem;color:var(--ink)}
+    .role ion-icon{font-size:1rem;color:var(--rose-500)}
 
     .contact-list{margin:1rem 0;display:grid;gap:12px}
-    .contact-item{display:grid;grid-template-columns:36px 1fr;gap:.75rem;align-items:center}
-    .icon{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:#1b1c1e;border:1px solid #2a2c2e;color:var(--color-primary-2)}
-    .small{font-size:.8rem;color:var(--muted)}
+    .contact-item{display:grid;grid-template-columns:40px 1fr;gap:.75rem;align-items:center}
+    .icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:white;border:1px solid #ffd4e6;color:var(--rose-500)}
+    .small{font-size:.85rem;color:var(--muted)}
 
     .social{display:flex;gap:12px;margin-top:.25rem}
-    .social a{display:grid;place-items:center;width:36px;height:36px;border-radius:999px;border:1px solid #2a2c2e}
-    .social a:hover{background:#1d1f21;border-color:#3a3c3f}
+    .social a{display:grid;place-items:center;width:40px;height:40px;border-radius:999px;border:1px solid #ffd4e6;background:white}
+    .social a:hover{background:#fff;box-shadow:0 6px 18px rgba(180,31,94,.12)}
 
-    nav.nav{position:sticky;top:0;background:rgba(18,19,20,.7);backdrop-filter:blur(8px);border:1px solid #242627;border-radius:16px;padding:6px;display:flex;gap:6px;flex-wrap:wrap}
-    .tab{padding:.65rem .9rem;border-radius:10px;color:#d1d5db}
-    .tab[aria-selected="true"], .tab:hover{background:#1e2022;color:#fff;border:1px solid #2a2c2e}
+    nav.nav{position:sticky;top:0;background:rgba(255,247,250,.9);backdrop-filter:blur(8px);border:1px solid #ffe2ee;border-radius:16px;padding:6px;display:flex;gap:6px;flex-wrap:wrap}
+    .tab{padding:.65rem .9rem;border-radius:12px;color:var(--muted)}
+    .tab[aria-selected="true"], .tab:hover{background:white;color:var(--ink);border:1px solid #ffd4e6;box-shadow:0 6px 18px rgba(180,31,94,.08)}
 
     .section{display:none;padding:24px}
     .section[aria-hidden="false"]{display:block}
 
     .h2{font-size:var(--fs-1);margin:0 0 12px}
-    .lead{color:#d1d5db}
+    .lead{color:var(--muted)}
 
     .grid{display:grid;gap:16px}
     .grid.cols-2{grid-template-columns:1fr}
     @media (min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr}}
-    .service{display:flex;gap:12px;background:#151617;border:1px solid #242627;border-radius:16px;padding:16px}
+    .service{display:flex;gap:12px;background:white;border:1px solid #ffd4e6;border-radius:20px;padding:16px}
     .service .icon{border:0}
 
     .timeline{position:relative;padding-left:26px}
-    .timeline::before{content:"";position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:#2a2c2e}
+    .timeline::before{content:"";position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:#ffd4e6}
     .tl-item{margin:10px 0}
-    .tl-item::marker{content:""}
     .tl-title{font-weight:600}
-    .tl-meta{color:var(--color-primary-2);font-size:.9rem}
+    .tl-meta{color:var(--rose-500);font-size:.9rem}
 
     .projects{display:grid;grid-template-columns:1fr;gap:16px}
     @media (min-width:900px){.projects{grid-template-columns:repeat(3,1fr)}}
-    .project{border:1px solid #26282a;border-radius:16px;overflow:hidden;background:#151617}
+    .project{border:1px solid #ffd4e6;border-radius:16px;overflow:hidden;background:white}
     .project .meta{padding:12px}
-    .chip{font-size:.75rem;color:#cbd5e1}
+    .chip{font-size:.8rem;color:#7c6f73}
 
     .blog{display:grid;grid-template-columns:1fr;gap:16px}
     @media (min-width:860px){.blog{grid-template-columns:1fr 1fr}}
 
-    .map{aspect-ratio:16/9;border:0;filter:grayscale(1) invert(1);width:100%;border-radius:12px}
+    .map{aspect-ratio:16/9;border:0;filter:grayscale(0);width:100%;border-radius:12px}
+
+    /* Tarjetas editables */
+    .cards-editables{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+    @media (min-width:900px){.cards-editables{grid-template-columns:repeat(3,1fr)}}
+    .card-editar{background:white;border:1px dashed #ffc2db;border-radius:16px;padding:14px}
+    .card-editar header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+    .card-editar label{display:block;font-size:.85rem;color:var(--muted);margin:.5rem 0 .25rem}
+    .card-editar input,.card-editar textarea{width:100%;padding:.65rem .8rem;border-radius:12px;border:1px solid #ffd4e6;background:#fff}
+    .card-editar input[type="file"]{padding:.4rem}
+    .preview{border-radius:12px;overflow:hidden;border:1px solid #ffe2ee;background:#fff;aspect-ratio:16/10;display:grid;place-items:center;color:#b08595}
+    .guardar{margin-top:.6rem;display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(90deg,var(--rose-500),var(--plum-700));color:white;padding:.55rem .9rem;border-radius:999px}
 
     /* Skip link */
     .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;z-index:999;background:#111;color:#fff;padding:.5rem .75rem;border-radius:10px}
 
-    /* motion reduce */
     @media (prefers-reduced-motion:reduce){
       *{scroll-behavior:auto !important;animation:none !important;transition:none !important}
     }
@@ -121,21 +130,28 @@
         <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=600&auto=format&fit=crop" alt="Avatar de Inma Contreras" width="300" height="300" />
       </figure>
       <h1 class="name">Inma Contreras</h1>
-      <p class="role"><ion-icon name="code-slash"></ion-icon> Docente & Front‑End Developer</p>
+      <p class="role"><ion-icon name="code-slash"></ion-icon> Profesora de TIC para Personas Adultas</p>
 
       <ul class="contact-list" aria-label="Datos de contacto">
         <li class="contact-item">
           <span class="icon" aria-hidden="true"><ion-icon name="mail-outline"></ion-icon></span>
           <div>
             <p class="small">Email</p>
-            <a href="mailto:hola@inmacontreras.com">hola@inmacontreras.com</a>
+            <a href="mailto:inmacontreras2709@gmail.com">inmacontreras2709@gmail.com</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <span class="icon" aria-hidden="true"><ion-icon name="call-outline"></ion-icon></span>
+          <div>
+            <p class="small">Teléfono</p>
+            <a href="tel:656971071">656 971 071</a>
           </div>
         </li>
         <li class="contact-item">
           <span class="icon" aria-hidden="true"><ion-icon name="logo-github"></ion-icon></span>
           <div>
             <p class="small">GitHub</p>
-            <a href="https://github.com/inmacontreras" target="_blank" rel="noreferrer">github.com/inmacontreras</a>
+            <a href="https://github.com/ici77" target="_blank" rel="noreferrer">github.com/ici77</a>
           </div>
         </li>
         <li class="contact-item">
@@ -167,34 +183,34 @@
       <!-- ABOUT -->
       <article id="sec-about" class="section" role="tabpanel" aria-labelledby="tab-about" aria-hidden="false">
         <h2 class="h2">Hola, soy Inma ✨</h2>
-        <p class="lead">Diseño y construyo interfaces accesibles y enseñó desarrollo web (HTML/CSS/JS/React). Me gusta convertir ideas complejas en experiencias simples.</p>
+        <p class="lead">Soy <strong>profesora de TIC para personas adultas</strong>. Acompaño a mi alumnado en su <strong>reciclaje profesional</strong>, desarrollando competencias digitales y proyectos reales para mejorar su <strong>empleabilidad</strong> y presencia online.</p>
         <div class="grid cols-2" style="margin-top:16px">
-          <div class="service">
-            <span class="icon" aria-hidden="true"><ion-icon name="color-palette-outline"></ion-icon></span>
-            <div>
-              <h3 class="h3" style="margin:.2rem 0">UI/UX accesible</h3>
-              <p class="small">WCAG, diseño responsivo, tokens y sistemas de diseño educativos.</p>
-            </div>
-          </div>
-          <div class="service">
-            <span class="icon" aria-hidden="true"><ion-icon name="logo-react"></ion-icon></span>
-            <div>
-              <h3 class="h3" style="margin:.2rem 0">Front‑End con React</h3>
-              <p class="small">Vite, componentes, estado y rutas. Integración con APIs.</p>
-            </div>
-          </div>
           <div class="service">
             <span class="icon" aria-hidden="true"><ion-icon name="school-outline"></ion-icon></span>
             <div>
-              <h3 class="h3" style="margin:.2rem 0">Docencia</h3>
-              <p class="small">UF1841/IFCD0210: materiales, test interactivos y prácticas guiadas.</p>
+              <h3 class="h3" style="margin:.2rem 0">Alfabetización digital</h3>
+              <p class="small">Desde cero a un uso seguro y eficaz de herramientas: Google Workspace, Canva, Git.</p>
             </div>
           </div>
           <div class="service">
-            <span class="icon" aria-hidden="true"><ion-icon name="construct-outline"></ion-icon></span>
+            <span class="icon" aria-hidden="true"><ion-icon name="code-slash"></ion-icon></span>
             <div>
-              <h3 class="h3" style="margin:.2rem 0">Stack web</h3>
-              <p class="small">Node/Express básico, despliegue en Hostinger y GitHub Pages.</p>
+              <h3 class="h3" style="margin:.2rem 0">Desarrollo web accesible</h3>
+              <p class="small">HTML, CSS y JavaScript con buenas prácticas WCAG y enfoque práctico.</p>
+            </div>
+          </div>
+          <div class="service">
+            <span class="icon" aria-hidden="true"><ion-icon name="briefcase-outline"></ion-icon></span>
+            <div>
+              <h3 class="h3" style="margin:.2rem 0">Orientación laboral TIC</h3>
+              <p class="small">CV digital, portfolio, LinkedIn y entrevistas para el mercado laboral actual.</p>
+            </div>
+          </div>
+          <div class="service">
+            <span class="icon" aria-hidden="true"><ion-icon name="people-outline"></ion-icon></span>
+            <div>
+              <h3 class="h3" style="margin:.2rem 0">Aprendizaje adulto</h3>
+              <p class="small">Metodologías activas, ritmo flexible y acompañamiento personalizado.</p>
             </div>
           </div>
         </div>
@@ -240,29 +256,14 @@
       <!-- PORTFOLIO -->
       <article id="sec-portfolio" class="section" role="tabpanel" aria-labelledby="tab-portfolio" aria-hidden="true">
         <h2 class="h2">Proyectos</h2>
-        <div class="projects">
-          <a class="project" href="https://inmacontreras.com/curso web/uf1841" target="_blank" rel="noreferrer">
-            <img src="https://picsum.photos/seed/uf1841/800/500" alt="Miniatura del curso UF1841" loading="lazy">
-            <div class="meta">
-              <h3 class="h3" style="margin:.25rem 0">UF1841: HTML & CSS</h3>
-              <span class="chip">Docencia • Accesibilidad</span>
-            </div>
-          </a>
-          <a class="project" href="#" target="_blank" rel="noreferrer">
-            <img src="https://picsum.photos/seed/react/800/500" alt="Miniatura de app React" loading="lazy">
-            <div class="meta">
-              <h3 class="h3" style="margin:.25rem 0">App React — Formularios</h3>
-              <span class="chip">React • Hooks</span>
-            </div>
-          </a>
-          <a class="project" href="#" target="_blank" rel="noreferrer">
-            <img src="https://picsum.photos/seed/acces/800/500" alt="Miniatura de guía de accesibilidad" loading="lazy">
-            <div class="meta">
-              <h3 class="h3" style="margin:.25rem 0">Guía rápida WCAG AA</h3>
-              <span class="chip">UX • Inclusión</span>
-            </div>
-          </a>
-        </div>
+        <p class="lead">Aquí puedes preparar tus tarjetas del portfolio: sube una imagen, describe el proyecto y añade los enlaces a tu web y a tu GitHub. Todo se guarda en tu navegador (localStorage).</p>
+
+        <section class="cards-editables" id="cards">
+          <!-- Se generan 6 tarjetas mediante JS si no existen -->
+        </section>
+
+        <h3 class="h3" style="margin-top:16px">Vista previa</h3>
+        <div class="projects" id="previewGrid"></div>
       </article>
 
       <!-- BLOG -->
@@ -346,6 +347,138 @@
 
     // Utilidad: cambiar tema de acento (opcional)
     // document.documentElement.style.setProperty('--color-primary', '#0ea5e9');
+  </script>
+  <script>
+    // Tabs accesibles
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.section');
+
+    function activateTab(button){
+      tabs.forEach(t=>t.setAttribute('aria-selected','false'));
+      panels.forEach(p=>p.setAttribute('aria-hidden','true'));
+      button.setAttribute('aria-selected','true');
+      document.getElementById(button.getAttribute('aria-controls')).setAttribute('aria-hidden','false');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    tabs.forEach(btn=>{
+      btn.addEventListener('click',()=>activateTab(btn));
+      btn.addEventListener('keydown',(e)=>{
+        const i=[...tabs].indexOf(btn);
+        if(e.key==='ArrowRight') tabs[(i+1)%tabs.length].focus();
+        if(e.key==='ArrowLeft') tabs[(i-1+tabs.length)%tabs.length].focus();
+      })
+    })
+
+    // Form: habilitar botón al ser válido
+    const form = document.getElementById('contacto');
+    const send = document.getElementById('btnEnviar');
+    if(form && send){
+      form.addEventListener('input',()=>{ send.disabled = !form.checkValidity(); });
+    }
+
+    // === Tarjetas editables (6) ===
+    const STORAGE_KEY = 'inma-portfolio-cards-v1';
+    const DEFAULT_CARDS = Array.from({length:6},(_,i)=>({
+      id:i+1,
+      title:`Proyecto ${i+1}`,
+      desc:'Describe brevemente el objetivo, las tecnologías y el impacto en el alumnado.',
+      web:'https://inmacontreras.com',
+      git:'https://github.com/ici77',
+      img:''
+    }));
+
+    const loadCards = ()=>{
+      try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || DEFAULT_CARDS }catch{ return DEFAULT_CARDS }
+    }
+    const saveCards = (cards)=> localStorage.setItem(STORAGE_KEY, JSON.stringify(cards));
+
+    const state = { cards: loadCards() };
+
+    const cardsRoot = document.getElementById('cards');
+    const previewRoot = document.getElementById('previewGrid');
+
+    function renderEditors(){
+      cardsRoot.innerHTML = '';
+      state.cards.forEach((c,idx)=>{
+        const el = document.createElement('article');
+        el.className='card-editar';
+        el.innerHTML = `
+          <header>
+            <span class="icon" aria-hidden="true"><ion-icon name="images-outline"></ion-icon></span>
+            <strong>Tarjeta ${idx+1}</strong>
+          </header>
+          <div class="preview" id="pv-${c.id}">${c.img?`<img src="${c.img}" alt="Previsualización tarjeta ${idx+1}" style="width:100%;height:100%;object-fit:cover">`:'Sin imagen'}</div>
+          <label>Imagen (JPG/PNG)<input type="file" accept="image/*" data-field="img" data-id="${c.id}"></label>
+          <label>Título<input type="text" value="${c.title}" data-field="title" data-id="${c.id}" /></label>
+          <label>Descripción<textarea rows="3" data-field="desc" data-id="${c.id}">${c.desc}</textarea></label>
+          <label>Enlace web<input type="url" value="${c.web}" placeholder="https://" data-field="web" data-id="${c.id}" /></label>
+          <label>Enlace GitHub<input type="url" value="${c.git}" placeholder="https://github.com/usuario/repositorio" data-field="git" data-id="${c.id}" /></label>
+          <button class="guardar" data-save="${c.id}"><ion-icon name="save-outline"></ion-icon> Guardar tarjeta</button>
+        `;
+        cardsRoot.appendChild(el);
+      });
+    }
+
+    function renderPreview(){
+      previewRoot.innerHTML = '';
+      state.cards.forEach(c=>{
+        const card = document.createElement('a');
+        card.className='project';
+        card.href = c.web || '#';
+        card.target = '_blank';
+        card.rel = 'noreferrer';
+        card.innerHTML = `
+          ${c.img?`<img src="${c.img}" alt="${c.title}">`:`<div class="preview" aria-hidden="true" style="height:180px">Sin imagen</div>`}
+          <div class="meta">
+            <h3 class="h3" style="margin:.25rem 0">${c.title}</h3>
+            <p class="small">${c.desc}</p>
+            <p class="small" style="margin-top:.25rem"><strong>GitHub:</strong> ${c.git?`<span>${c.git}</span>`:'—'}</p>
+          </div>`;
+        previewRoot.appendChild(card);
+      })
+    }
+
+    function wireEvents(){
+      cardsRoot.addEventListener('input', (e)=>{
+        const id = +e.target.dataset.id; if(!id) return;
+        const field = e.target.dataset.field;
+        const card = state.cards.find(x=>x.id===id);
+        if(!card) return;
+        card[field] = e.target.value;
+      });
+
+      cardsRoot.addEventListener('change', async (e)=>{
+        const id = +e.target.dataset.id; if(!id) return;
+        const field = e.target.dataset.field;
+        if(field !== 'img') return;
+        const file = e.target.files?.[0];
+        if(!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          const card = state.cards.find(x=>x.id===id);
+          card.img = reader.result;
+          const pv = document.getElementById(`pv-${id}`);
+          pv.innerHTML = `<img src="${card.img}" alt="Previsualización tarjeta ${id}" style="width:100%;height:100%;object-fit:cover">`;
+        };
+        reader.readAsDataURL(file);
+      });
+
+      cardsRoot.addEventListener('click', (e)=>{
+        const btn = e.target.closest('[data-save]');
+        if(!btn) return;
+        saveCards(state.cards);
+        renderPreview();
+        btn.textContent = 'Guardado ✓';
+        setTimeout(()=>{ btn.innerHTML = '<ion-icon name="save-outline"></ion-icon> Guardar tarjeta'; }, 1200);
+      });
+    }
+
+    // Init
+    if(cardsRoot && previewRoot){
+      renderEditors();
+      renderPreview();
+      wireEvents();
+    }
   </script>
 </body>
 </html>
