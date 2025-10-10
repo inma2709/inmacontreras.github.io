@@ -125,6 +125,105 @@
     /* Skip link */
     .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;z-index:999;background:#111;color:#fff;padding:.5rem .75rem;border-radius:10px}
+  /* ——— CV más ancho y botón en relieve ——— */
+.cv-figure{
+  max-width: 860px;                /* más horizontal */
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 12px 30px rgba(30,74,174,.12);
+}
+.cv-figure img{
+  width: 100%;
+  height: auto;                    /* respeta proporción del PNG */
+  display: block;
+}
+
+.btn-raise{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.75rem 1rem;
+  border-radius:14px;
+  color: var(--color-ink);
+  background: linear-gradient(180deg,#ffffff 0%, #f5f8ff 100%); /* leve relieve */
+  border: 1px solid var(--color-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.7),      /* brillo superior */
+    0 10px 24px rgba(30,74,174,.12);         /* sombra externa */
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.btn-raise ion-icon{ color: var(--color-primary); }
+.btn-raise:hover{
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.8),
+    0 14px 30px rgba(30,74,174,.16);
+}
+.btn-raise:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
+/* === Tarjeta Personal === */
+.tarjeta-personal{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f6f8ff 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 12px 28px rgba(30,74,174,.12);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.tarjeta-personal:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 38px rgba(30,74,174,.18);
+}
+
+.tarjeta-foto{
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 4px 14px rgba(30,74,174,.2);
+}
+.tarjeta-foto img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tarjeta-contenido h3{
+  margin: 0 0 .5rem;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+.tarjeta-contenido p{
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.tarjeta-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .55rem .9rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(30,74,174,.25);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.tarjeta-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(30,74,174,.3);
+}
+
+  
   </style>
 </head>
 <body>
@@ -214,12 +313,17 @@
       <article id="sec-resume" class="section" role="tabpanel" aria-labelledby="tab-resume" aria-hidden="true">
         <h2 class="h2">Formación y Trayectoria Profesional</h2>
 
-        <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;margin-bottom:1.5rem">
-          <figure style="max-width:280px;border-radius:20px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 6px 18px rgba(30,74,174,.12)">
-            <img src="cvinma.png" alt="Curriculum — Inma Contreras" width="980" height="270">
-          </figure>
-          <a href="icidocentetic.pdf" download class="btn"><ion-icon name="download-outline"></ion-icon> Descargar CV en PDF</a>
-        </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+  <figure class="cv-figure">
+    <img src="cvinma.png" alt="Curriculum — Inma Contreras">
+  </figure>
+
+  <a href="icidocentetic.pdf" download class="btn-raise">
+    <ion-icon name="download-outline"></ion-icon>
+    Descargar CV en PDF
+  </a>
+</div>
+
 
         <div class="grid cols-2">
           <section>
@@ -268,16 +372,16 @@
         <section class="projects-static" aria-label="Listado de proyectos">
           <!-- 1 -->
           <article class="project-card">
-            <a class="project-media" href="https://animacionesybootstrap.netlify.app/l" target="_blank" rel="noreferrer">
+            <a class="project-media" href="https://animacionesybootstrap.netlify.app/" target="_blank" rel="noreferrer">
               <img src="htmlycss.png" alt="Curso HTML & CSS — portada">
             </a>
             <div class="project-body">
-              <h3 class="project-title">Curso HTML &amp; CSS
+              <h3 class="project-title">Lecciones para clase. HTML &amp; CSS y Bootstrap
                 <span class="badge"><ion-icon name="code-slash"></ion-icon> Front-end</span>
               </h3>
-              <p class="project-desc">Fundamentos de maquetación, accesibilidad y buenas prácticas.</p>
+              <p class="project-desc">Aprendemos Html y Css para diseños web prácticos.</p>
               <div class="project-links">
-                <a class="btn-chip" href="https://animacionesybootstrap.netlify.app/l" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Netlify</a>
+                <a class="btn-chip" href="https://animacionesybootstrap.netlify.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Netlify</a>
                 <a class="btn-chip" href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
@@ -395,6 +499,20 @@
         </form>
       </article>
     </section>
+    <!-- Tarjeta personal debajo del formulario -->
+<div class="tarjeta-personal">
+  <figure class="tarjeta-foto">
+    <img src="inma.png" alt="Inma Contreras — Docente TIC" />
+  </figure>
+  <div class="tarjeta-contenido">
+    <h3>Inma Contreras</h3>
+    <p>Docente de Desarrollo Web y Formadora en Competencias Digitales.</p>
+    <a href="https://www.inmacontreras.com" target="_blank" rel="noreferrer" class="tarjeta-btn">
+      <ion-icon name="globe-outline"></ion-icon> Visitar mi web
+    </a>
+  </div>
+</div>
+
   </main>
 
   <div id="toast" class="toast" role="status" aria-live="polite">¡Mensaje enviado! ✨</div>
