@@ -1,340 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inma Contreras — Portfolio</title>
-  <meta name="description"
-    content="Portfolio de Inma Contreras: docente de desarrollo web, front-end y diseño accesible. Proyectos, formación y contacto." />
+  <meta name="description" content="Portfolio de Inma Contreras: docente de desarrollo web, front-end y diseño accesible. Proyectos, formación y contacto." />
   <meta name="theme-color" content="#1E4AAE" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <style>
-    /* Variables y reset */
-    :root {
-      --color-primary: #1E4AAE;
-      --color-secondary: #F47A60;
-      --color-bg: #FAF8F5;
-      --color-panel: #FFFFFF;
-      --color-ink: #1B2430;
-      --color-muted: #6E7683;
-      --color-accent: #9CC4B2;
-      --color-border: #D8D8D8;
+    :root{
+      /* Paleta "Inma Docente TIC" */
+      --color-primary:#1E4AAE;   /* Azul Docente */
+      --color-secondary:#F47A60; /* Coral suave */
+      --color-bg:#FAF8F5;        /* Marfil */
+      --color-panel:#FFFFFF;     /* Panel claro */
+      --color-ink:#1B2430;       /* Texto principal */
+      --color-muted:#6E7683;     /* Texto secundario */
+      --color-border:#E7E7E7;    /* Borde suave */
       --ring: var(--color-secondary);
-      --radius: 18px;
 
-      --ff: 'Poppins', system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      --fs-1: clamp(1.5rem, 2vw, 2rem);
-      --fs-2: clamp(1.1rem, 1.5vw, 1.25rem);
-      --fs-p: 1rem;
-
-      --shadow-1: 0 18px 50px rgba(30, 74, 174, .12);
-      --transition-1: .25s ease;
+      --ff:'Poppins',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      --shadow-1: 0 18px 50px rgba(30,74,174,.12);
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--ff);
-      background: var(--color-bg);
-      color: var(--color-ink);
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-      background: none;
-      border: 0;
-      color: inherit;
-      cursor: pointer;
-    }
-
-    :focus-visible {
-      outline: 3px solid var(--ring);
-      outline-offset: 2px;
-    }
+    /* Reset mínimo accesible */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:var(--ff);background:var(--color-bg);color:var(--color-ink);line-height:1.6}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;background:none;border:0;color:inherit;cursor:pointer}
+    :focus-visible{outline:3px solid var(--ring);outline-offset:2px}
 
     /* Layout */
-    main {
-      max-width: 1200px;
-      margin-inline: auto;
-      padding: 16px;
-      display: grid;
-      gap: 24px;
+    main{max-width:1200px;margin-inline:auto;padding:16px;display:grid;gap:24px}
+    @media (min-width:980px){
+      main{grid-template-columns:320px 1fr;align-items:start}
     }
 
-    @media (min-width: 980px) {
-      main {
-        grid-template-columns: 320px 1fr;
-        align-items: start;
-      }
-    }
+    .sidebar{position:sticky;top:24px;padding:24px;background:var(--color-panel);
+      border:1px solid var(--color-border);border-radius:24px;box-shadow:var(--shadow-1)}
+    .avatar{border-radius:18px;overflow:hidden;border:1px solid var(--color-border)}
+    .name{font-size:clamp(1.6rem,2.2vw,2rem);font-weight:600;margin:.75rem 0 .25rem}
+    .role{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;background:#fff;
+      border:1px solid var(--color-border);border-radius:999px;padding:.45rem .75rem}
+    .role ion-icon{font-size:1rem;color:var(--color-primary)}
+    .contact-list{margin:1rem 0;display:grid;gap:12px}
+    .icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#fff;border:1px solid var(--color-border);color:var(--color-primary)}
+    .small{font-size:.85rem;color:var(--color-muted)}
+    .contact-item a[href^="mailto"]{font-size:.85rem;word-break:break-all}
+    .social{display:flex;gap:12px;margin-top:.25rem}
+    .social a{display:grid;place-items:center;width:40px;height:40px;border-radius:999px;border:1px solid var(--color-border);background:#fff}
+    .social a:hover{box-shadow:0 6px 18px rgba(30,74,174,.12)}
 
-    .sidebar, .card {
-      background: var(--color-panel);
-      border: 1px solid var(--color-border);
-      border-radius: 24px;
-      box-shadow: var(--shadow-1);
-    }
+    /* Tabs */
+    nav.nav{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);
+      border:1px solid var(--color-border);border-radius:16px;padding:6px;display:flex;gap:6px;flex-wrap:wrap}
+    .tab{padding:.65rem .9rem;border-radius:12px;color:var(--color-muted);transition:background .2s ease, transform .2s ease}
+    .tab[aria-selected="true"], .tab:hover{background:#fff;color:var(--color-ink);border:1px solid var(--color-border);box-shadow:0 6px 18px rgba(30,74,174,.08)}
+    .tab:active{transform:scale(.98)}
+    .section{display:none;padding:24px}
+    .section[aria-hidden="false"]{display:block}
 
-    .sidebar {
-      position: sticky;
-      top: 24px;
-      padding: 24px;
-    }
+    /* Grids & bloques */
+    .grid{display:grid;gap:16px}
+    .grid.cols-2{grid-template-columns:1fr}
+    @media (min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr}}
 
-    .avatar {
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--color-border);
-    }
+    .service{display:flex;gap:12px;background:#fff;border:1px solid var(--color-border);border-radius:20px;padding:16px}
+    .service .icon{border:0;color:var(--color-secondary)}
 
-    .name {
-      font-size: var(--fs-1);
-      font-weight: 600;
-      margin: 0.75rem 0 0.25rem;
-    }
+    .timeline{position:relative;padding-left:26px}
+    .timeline::before{content:"";position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:var(--color-border)}
+    .tl-item{margin:10px 0}
+    .tl-title{font-weight:600}
+    .tl-meta{color:var(--color-primary);font-size:.9rem}
 
-    .role {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      background: #fff;
-      border: 1px solid var(--color-border);
-      border-radius: 999px;
-      padding: 0.45rem 0.75rem;
-      color: var(--color-ink);
-    }
+    /* Proyectos estáticos */
+    .projects-static{display:grid;grid-template-columns:1fr;gap:18px}
+    @media (min-width:720px){ .projects-static{ grid-template-columns:repeat(2,1fr) } }
+    @media (min-width:1024px){ .projects-static{ grid-template-columns:repeat(3,1fr) } }
 
-    .role ion-icon {
-      font-size: 1rem;
-      color: var(--color-primary);
-    }
+    .project-card{background:linear-gradient(180deg,#fff 0%,#fff7fa 100%);
+      border:1px solid var(--color-border);border-radius:18px;box-shadow:0 14px 40px rgba(30,74,174,.10);
+      overflow:hidden;display:flex;flex-direction:column;transform:translateY(6px);opacity:0;
+      transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease, opacity .6s ease}
+    .project-card.reveal{transform:translateY(0);opacity:1}
+    .project-card:hover{box-shadow:0 18px 48px rgba(30,74,174,.16);transform:translateY(-3px)}
 
-    .contact-list {
-      margin: 1rem 0;
-      display: grid;
-      gap: 12px;
-    }
+    .project-media{aspect-ratio:16/10;background:#faf5f7;display:block;overflow:hidden}
+    .project-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .project-body{padding:14px 14px 12px;display:flex;flex-direction:column;gap:.5rem}
+    .project-title{margin:0;font-size:1.05rem;font-weight:600}
+    .project-desc{margin:0;font-size:.92rem;color:var(--color-muted)}
+    .badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;padding:.25rem .55rem;border-radius:999px;background:#f0f6ff;color:#1e40af;border:1px solid #e6efff}
+    .project-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:.35rem}
+    .btn-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .7rem;border-radius:999px;font-size:.85rem;background:#fff;border:1px solid var(--color-border);box-shadow:0 6px 16px rgba(236,72,153,.10)}
+    .btn-chip:hover{box-shadow:0 8px 18px rgba(236,72,153,.15)}
+    .btn-chip ion-icon{font-size:1rem;color:#ec4899}
 
-    .contact-item a[href^="mailto"] {
-      font-size: 0.85rem;
-      word-break: break-all;
-    }
+    /* Hero logo + imagen con animación */
+    .logo-hero{display:flex;justify-content:center;align-items:center;margin-bottom:1.5rem;background:linear-gradient(135deg,#f9d6e2 0%,#e0ecff 100%);padding:1.5rem;border-radius:20px;box-shadow:0 8px 25px rgba(236,72,153,.15)}
+    .logo-hero img{width:280px;height:auto;border-radius:16px;background:#fff;padding:10px 20px;box-shadow:0 6px 18px rgba(30,74,174,.15);animation:float 5s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
 
-    .icon {
-      display: grid;
-      place-items: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: #fff;
-      border: 1px solid var(--color-border);
-      color: var(--color-primary);
-    }
+    .hero-photo-wrap{display:flex;justify-content:center;align-items:center;margin-top:2rem;padding:1.5rem;background:linear-gradient(135deg,#e0ecff 0%,#fde8ef 100%);border-radius:24px;box-shadow:0 8px 25px rgba(30,74,174,.15)}
+    .hero-photo{width:70%;max-width:700px;height:auto;border-radius:18px;background:#fff;padding:8px;box-shadow:0 6px 20px rgba(30,74,174,.15);object-fit:cover}
 
-    .small {
-      font-size: 0.85rem;
-      color: var(--color-muted);
-    }
+    /* Contacto */
+    .contact-card{background:#fff;border:1px solid var(--color-border);border-radius:18px;box-shadow:var(--shadow-1);padding:16px}
+    .contact-grid{display:grid;gap:12px}
+    @media (min-width:760px){.contact-grid{grid-template-columns:1fr 1fr}}
+    .input{width:100%;padding:.9rem 1rem;border-radius:12px;border:1px solid var(--color-border);background:#fff}
+    .textarea{min-height:140px;resize:vertical}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(90deg,var(--color-primary),var(--color-secondary));color:#fff;padding:.7rem 1rem;border-radius:999px}
+    .toast{position:fixed;right:16px;bottom:16px;background:#111;color:#fff;padding:.7rem 1rem;border-radius:12px;opacity:0;transform:translateY(8px);transition:.3s}
+    .toast.show{opacity:1;transform:translateY(0)}
 
-    .social {
-      display: flex;
-      gap: 12px;
-      margin-top: 0.25rem;
-    }
-
-    .social a {
-      display: grid;
-      place-items: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      border: 1px solid var(--color-border);
-      background: #fff;
-    }
-
-    .social a:hover {
-      background: #fff;
-      box-shadow: 0 6px 18px rgba(30, 74, 174, .12);
-    }
-
-    nav.nav {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, .85);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--color-border);
-      border-radius: 16px;
-      padding: 6px;
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .tab {
-      padding: 0.65rem 0.9rem;
-      border-radius: 12px;
-      color: var(--color-muted);
-    }
-
-    .tab[aria-selected="true"], .tab:hover {
-      background: #fff;
-      color: var(--color-ink);
-      border: 1px solid var(--color-border);
-      box-shadow: 0 6px 18px rgba(30, 74, 174, .08);
-    }
-
-    .section {
-      display: none;
-      padding: 24px;
-    }
-
-    .section[aria-hidden="false"] {
-      display: block;
-    }
-
-    .h2 {
-      font-size: var(--fs-1);
-      margin: 0 0 12px;
-    }
-
-    .lead {
-      color: var(--color-muted);
-    }
-
-    /* Proyectos - Estilos */
-
-    .projects-static {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    @media (min-width: 720px) {
-      .projects-static {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .projects-static {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .project-card {
-      background: linear-gradient(180deg, #ffffff 0%, #fff7fa 100%);
-      border: 1px solid var(--color-border, #f0e5ef);
-      border-radius: 18px;
-      box-shadow: 0 14px 40px rgba(30, 74, 174, .10);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 48px rgba(30, 74, 174, .16);
-    }
-
-    .project-media {
-      aspect-ratio: 16 / 10;
-      background: #faf5f7;
-      display: block;
-      overflow: hidden;
-    }
-
-    .project-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover .project-media img {
-      transform: scale(1.05);
-    }
-
-    .project-body {
-      padding: 14px 14px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      flex-grow: 1;
-    }
-
-    .project-title {
-      margin: 0;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--color-primary);
-    }
-
-    .project-desc {
-      margin: 0;
-      font-size: 0.92rem;
-      color: var(--color-muted);
-      flex-grow: 1;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn-link {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 9999px;
-      background: var(--color-secondary);
-      color: white;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-decoration: none;
-      box-shadow: 0 6px 16px rgba(244, 122, 96, 0.3);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .btn-link:hover,
-    .btn-link:focus {
-      background: #d96c4e;
-      box-shadow: 0 8px 20px rgba(244, 122, 96, 0.5);
-      outline: none;
-    }
+    /* Skip link */
+    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;z-index:999;background:#111;color:#fff;padding:.5rem .75rem;border-radius:10px}
   </style>
 </head>
-
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
-  <main id="contenido">
 
+  <main id="contenido">
     <!-- Sidebar -->
     <aside class="sidebar" aria-label="Perfil y contactos">
       <figure class="avatar">
@@ -351,9 +147,7 @@
             <a href="mailto:hola@inmacontreras.com">hola@inmacontreras.com</a>
           </div>
         </li>
-        <li class="contact-item">
-          <span class="icon" aria-hidden="true"><ion-icon name="call-outline"></ion-icon></span>
-        </li>
+
         <li class="contact-item">
           <span class="icon" aria-hidden="true"><ion-icon name="globe-outline"></ion-icon></span>
           <div>
@@ -361,13 +155,15 @@
             <a href="https://www.inmacontreras.com" target="_blank" rel="noreferrer">www.inmacontreras.com</a>
           </div>
         </li>
+
         <li class="contact-item">
           <span class="icon" aria-hidden="true"><ion-icon name="logo-github"></ion-icon></span>
           <div>
-            <p class="small">GitHub. Proyectos Desarrollo</p>
+            <p class="small">GitHub · Proyectos</p>
             <a href="https://github.com/ici77" target="_blank" rel="noreferrer">github.com/ici77</a>
           </div>
         </li>
+
         <li class="contact-item">
           <span class="icon" aria-hidden="true"><ion-icon name="location-outline"></ion-icon></span>
           <div>
@@ -378,12 +174,11 @@
       </ul>
 
       <div class="social" aria-label="Redes sociales">
-        <a href="https://www.linkedin.com/in/ici77/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><ion-icon
-            name="logo-linkedin"></ion-icon></a>
+        <a href="https://www.linkedin.com/in/ici77/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
       </div>
     </aside>
 
-    <!-- Main column -->
+    <!-- Columna principal -->
     <section>
       <nav class="nav" role="tablist" aria-label="Secciones del portfolio">
         <button class="tab" role="tab" aria-selected="true" aria-controls="sec-about" id="tab-about">Sobre mí</button>
@@ -394,59 +189,24 @@
 
       <!-- ABOUT -->
       <article id="sec-about" class="section" role="tabpanel" aria-labelledby="tab-about" aria-hidden="false">
-        <div
-          style="display:flex; justify-content:center; align-items:center; margin-bottom:1.5rem; background:linear-gradient(135deg, #f9d6e2 0%, #e0ecff 100%); padding:1.5rem; border-radius:20px; box-shadow:0 8px 25px rgba(236,72,153,.15);">
-          <img src="logo.png" alt="Logo personal de Inma Contreras" style="width:280px; height:auto; border-radius:16px; background:white; padding:10px 20px; box-shadow:0 6px 18px rgba(30,74,174,.15);">
+        <div class="logo-hero">
+          <img src="logo.png" alt="Logo personal de Inma Contreras">
         </div>
 
-        <h2 class="h2" style="text-align:center;color:#1B2430;">Formar en tecnología, transformar personas 💻✨</h2>
+        <h2 class="h2" style="text-align:center;">Formar en tecnología, transformar personas 💻✨</h2>
 
-        <p class="lead" style="text-align:center;max-width:780px;margin-inline:auto;">
-          Me dedico a formar a la próxima generación de profesionales en
-          <strong>desarrollo web, programación y gestión de datos</strong>. Actualmente, como tutora del certificado
-          profesional
-          <strong>IFCD0210 — Desarrollo de Aplicaciones con Tecnologías Web</strong>, acompaño a mi alumnado en un
-          recorrido completo
-          por el <strong>front-end y el back-end</strong>: desde la maquetación con <strong>HTML5 y CSS3</strong>, la
-          programación con <strong>JavaScript</strong> y <strong>React</strong>, hasta la creación de
-          <strong>servidores con Node.js y Express</strong> y la gestión de bases de datos <strong>SQL</strong>. Un
-          itinerario práctico que culmina en proyectos reales listos para el entorno laboral.
+        <p class="lead" style="text-align:center;max-width:780px;margin-inline:auto">
+          Me dedico a formar a la próxima generación de profesionales en <strong>desarrollo web, programación y gestión de datos</strong>.
+          Como tutora del certificado profesional <strong>IFCD0210</strong>, acompaño a mi alumnado en un recorrido completo por
+          <strong>front-end y back-end</strong>: <strong>HTML5, CSS3, JavaScript, React</strong>, <strong>Node.js, Express</strong> y <strong>SQL</strong>.
         </p>
 
-        <p class="lead" style="text-align:center;max-width:780px;margin:1rem auto;">
-          Mi formación técnica y experiencia en <strong>HTML, CSS, JavaScript, React, Node.js, Express y SQL</strong>,
-          unidas a mi habilitación pedagógica, me permiten impartir y coordinar los distintos módulos del certificado
-          (UF1841, UF1842, UF1843 y UF1844),
-          adaptando cada uno a las <strong>necesidades del mercado actual</strong> y a los objetivos de aprendizaje de
-          cada grupo. Además, afronto con entusiasmo el reto de integrar las tecnologías de
-          <strong>desarrollo web moderno</strong> con una
-          <strong>metodología didáctica inclusiva y transformadora</strong>.
+        <p class="lead" style="text-align:center;max-width:780px;margin:1rem auto">
+          Coordino los módulos UF1841–UF1844 con metodología práctica, inclusiva y orientada al empleo.
         </p>
 
-        <p class="lead" style="text-align:center;max-width:780px;margin:1rem auto;">
-          He elegido la docencia en competencias digitales porque creo que
-          <em>no es la tecnología la que transforma, sino el conocimiento profundo, el uso consciente y el acompañamiento
-            honesto</em>.
-        </p>
-
-        <p class="lead" style="text-align:center;max-width:780px;margin:1rem auto;">
-          Mi experiencia profesional me ha enseñado a escuchar, resolver y conectar. Todo ello me sitúa en el camino
-          perfecto
-          para acompañar a quienes comienzan en el mundo de la tecnología, compartiendo con ellos todo lo que sé y todo
-          lo que he vivido.
-        </p>
-
-        <p class="lead" style="text-align:center;max-width:780px;margin:1.2rem auto;font-weight:500;color:var(--rose-500);">
-          Hoy me mueve la pasión.
-          Pero no una pasión cualquiera: es la pasión por la <strong>transformación</strong>, por un cambio que impulsa,
-          que construye, que nos proyecta hacia un futuro mejor.<br />
-          <strong>Porque cuando se enseña con pasión, la transformación es inevitable.</strong>
-        </p>
-
-        <div
-          style="display:flex; justify-content:center; align-items:center; margin-top:2rem; padding:1.5rem; background:linear-gradient(135deg, #e0ecff 0%, #fde8ef 100%); border-radius:24px; box-shadow:0 8px 25px rgba(30,74,174,.15);">
-          <img src="hero-inma.png" alt="Inma Contreras — Docente TIC"
-            style="width:70%; max-width:700px; height:auto; border-radius:18px; background:white; padding:8px; box-shadow:0 6px 20px rgba(30,74,174,.15); object-fit:cover;" />
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="hero-inma.png" alt="Inma Contreras — Docente TIC">
         </div>
       </article>
 
@@ -454,13 +214,11 @@
       <article id="sec-resume" class="section" role="tabpanel" aria-labelledby="tab-resume" aria-hidden="true">
         <h2 class="h2">Formación y Trayectoria Profesional</h2>
 
-        <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin-bottom:1.5rem;">
-          <figure style="max-width:280px; border-radius:20px; overflow:hidden; border:1px solid var(--color-border); box-shadow:0 6px 18px rgba(30, 74, 174, .12);">
-            <img src="cvinma.png" alt="curriculum — Inma Contreras" width="980" height="270" />
+        <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;margin-bottom:1.5rem">
+          <figure style="max-width:280px;border-radius:20px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 6px 18px rgba(30,74,174,.12)">
+            <img src="cvinma.png" alt="Curriculum — Inma Contreras" width="980" height="270">
           </figure>
-          <a href="icidocentetic.pdf" download class="guardar" style="text-decoration:none;">
-            <ion-icon name="download-outline"></ion-icon> Descargar CV en PDF
-          </a>
+          <a href="icidocentetic.pdf" download class="btn"><ion-icon name="download-outline"></ion-icon> Descargar CV en PDF</a>
         </div>
 
         <div class="grid cols-2">
@@ -470,8 +228,7 @@
               <li class="tl-item">
                 <div class="tl-title">Grado Superior de Desarrollo de Aplicaciones Multiplataforma (DAM)</div>
                 <div class="tl-meta">Salesianas Nervión · 2023–2025</div>
-                <p class="small">Aprendizaje integral en desarrollo de aplicaciones. Bases de datos. Android. <strong>Nota media:
-                    8,67</strong>.</p>
+                <p class="small">Bases de datos, Android, programación. <strong>Nota media: 8,67</strong>.</p>
               </li>
               <li class="tl-item">
                 <div class="tl-title">Licenciatura en Derecho</div>
@@ -479,8 +236,7 @@
                 <p class="small">Especialidad en Empresa.</p>
               </li>
               <li class="tl-item">
-                <div class="tl-title">Máster Universitario en Formación del Profesorado de Educación Secundaria
-                  Obligatoria, Bachillerato, FP y Enseñanza de Idiomas. (MAES).</div>
+                <div class="tl-title">MAES — Profesorado de Secundaria, FP e Idiomas</div>
                 <div class="tl-meta">VIU · 2015</div>
               </li>
             </ol>
@@ -492,136 +248,148 @@
               <li class="tl-item">
                 <div class="tl-title">Docente de Desarrollo Web</div>
                 <div class="tl-meta">Septiembre 2025 — Presente</div>
-                <p class="small">Diseño de materiales, quizzes y portfolios para alumnado.</p>
+                <p class="small">Diseño de materiales, quizzes y portfolios.</p>
               </li>
               <li class="tl-item">
                 <div class="tl-title">BBVA — Gestora Comercial</div>
                 <div class="tl-meta">1999 — 2021</div>
-                <p class="small">Experiencia en gestión de clientes, objetivos y liderazgo. Constancia y exigencia aplicadas a
-                  la docencia tecnológica.</p>
+                <p class="small">Gestión de clientes y objetivos. Constancia y liderazgo aplicados a la docencia.</p>
               </li>
             </ol>
           </section>
         </div>
       </article>
 
-     <!-- PORTFOLIO -->
+      <!-- PORTFOLIO -->
       <article id="sec-portfolio" class="section" role="tabpanel" aria-labelledby="tab-portfolio" aria-hidden="true">
         <h2 class="h2">Proyectos</h2>
-        <p class="lead">Una selección de trabajos docentes y materiales de apoyo para el aula (front-end y back-end).</p>
+        <p class="lead">Selección de trabajos docentes y materiales de apoyo (front-end y back-end).</p>
 
         <section class="projects-static" aria-label="Listado de proyectos">
-
+          <!-- 1 -->
           <article class="project-card">
-            <a class="project-media" href="https://animacionesybootstrap.netlify.app/l" target="_blank" rel="noreferrer" aria-label="Curso HTML & CSS - Visitar sitio">
-              <img src="htmlycss.png" alt="Curso HTML & CSS — portada" />
+            <a class="project-media" href="https://animacionesybootstrap.netlify.app/l" target="_blank" rel="noreferrer">
+              <img src="htmlycss.png" alt="Curso HTML & CSS — portada">
             </a>
             <div class="project-body">
-              <h3 class="project-title">Curso HTML &amp; CSS</h3>
+              <h3 class="project-title">Curso HTML &amp; CSS
+                <span class="badge"><ion-icon name="code-slash"></ion-icon> Front-end</span>
+              </h3>
               <p class="project-desc">Fundamentos de maquetación, accesibilidad y buenas prácticas.</p>
               <div class="project-links">
-                <a href="https://animacionesybootstrap.netlify.app/l" target="_blank" rel="noreferrer" class="btn-link">Ver curso</a>
-                <a href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer" class="btn-link">Código en GitHub</a>
+                <a class="btn-chip" href="https://animacionesybootstrap.netlify.app/l" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Netlify</a>
+                <a class="btn-chip" href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
 
+          <!-- 2 -->
           <article class="project-card">
-            <a class="project-media" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer" aria-label="Ahora JavaScript - Visitar sitio">
-              <img src="js.png" alt="Ahora JavaScript — portada" />
+            <a class="project-media" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer">
+              <img src="js.png" alt="Ahora JavaScript — portada">
             </a>
             <div class="project-body">
-              <h3 class="project-title">Ahora JavaScript</h3>
+              <h3 class="project-title">Ahora JavaScript
+                <span class="badge"><ion-icon name="flash-outline"></ion-icon> JS</span>
+              </h3>
               <p class="project-desc">Ejercicios y retos para afianzar JS desde cero a intermedio.</p>
               <div class="project-links">
-                <a href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer" class="btn-link">Ver curso</a>
-                <a href="https://github.com/inma2709/javascript" target="_blank" rel="noreferrer" class="btn-link">Código en GitHub</a>
+                <a class="btn-chip" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Netlify</a>
+                <a class="btn-chip" href="https://github.com/inma2709/javascript" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
 
+          <!-- 3 -->
           <article class="project-card">
-            <a class="project-media" href="https://conreact.netlify.app/" target="_blank" rel="noreferrer" aria-label="React — Componentes básicos - Visitar sitio">
-              <img src="react.png" alt="React — Componentes básicos — portada" />
+            <a class="project-media" href="https://conreact.netlify.app/" target="_blank" rel="noreferrer">
+              <img src="react.png" alt="React — Componentes básicos — portada">
             </a>
             <div class="project-body">
-              <h3 class="project-title">React — Componentes básicos</h3>
+              <h3 class="project-title">React — Componentes básicos
+                <span class="badge"><ion-icon name="logo-react"></ion-icon> React</span>
+              </h3>
               <p class="project-desc">Estados, props y rutas con Vite para proyectos educativos.</p>
               <div class="project-links">
-                <a href="https://conreact.netlify.app/" target="_blank" rel="noreferrer" class="btn-link">Ver curso</a>
-                <a href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer" class="btn-link">Código en GitHub</a>
+                <a class="btn-chip" href="https://conreact.netlify.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Netlify</a>
+                <a class="btn-chip" href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
 
+          <!-- 4 -->
           <article class="project-card">
-            <a class="project-media" href="https://app.netlify.com/projects/usodegit/overview" target="_blank" rel="noreferrer" aria-label="Git & GitHub para el aula - Visitar sitio">
-              <img src="git.png" alt="Git & GitHub para el aula — portada" />
+            <a class="project-media" href="https://app.netlify.com/projects/usodegit/overview" target="_blank" rel="noreferrer">
+              <img src="git.png" alt="Git & GitHub para el aula — portada">
             </a>
             <div class="project-body">
-              <h3 class="project-title">Git &amp; GitHub para el aula</h3>
+              <h3 class="project-title">Git &amp; GitHub para el aula
+                <span class="badge"><ion-icon name="git-branch-outline"></ion-icon> Flujo</span>
+              </h3>
               <p class="project-desc">Flujo de trabajo, commits, ramas y publicación en Pages.</p>
               <div class="project-links">
-                <a href="https://app.netlify.com/projects/usodegit/overview" target="_blank" rel="noreferrer" class="btn-link">Ver sitio</a>
-                <!-- Sin repositorio GitHub público -->
+                <a class="btn-chip" href="https://app.netlify.com/projects/usodegit/overview" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Netlify</a>
               </div>
             </div>
           </article>
 
+          <!-- 5 -->
           <article class="project-card">
-            <a class="project-media" href="https://inmacontreras.com" target="_blank" rel="noreferrer" aria-label="Marca personal — Logo - Visitar sitio">
-              <img src="logo.png" alt="Marca personal — Logo — portada" />
+            <a class="project-media" href="https://inmacontreras.com" target="_blank" rel="noreferrer">
+              <img src="logo.png" alt="Marca personal — Logo — portada">
             </a>
             <div class="project-body">
-              <h3 class="project-title">Marca personal — Logo</h3>
+              <h3 class="project-title">Marca personal — Logo
+                <span class="badge"><ion-icon name="color-palette-outline"></ion-icon> Identidad</span>
+              </h3>
               <p class="project-desc">Identidad visual y uso coherente en portfolio y redes.</p>
               <div class="project-links">
-                <a href="https://inmacontreras.com" target="_blank" rel="noreferrer" class="btn-link">Ver sitio</a>
-                <a href="https://github.com/ici77" target="_blank" rel="noreferrer" class="btn-link">Código en GitHub</a>
+                <a class="btn-chip" href="https://inmacontreras.com" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
+                <a class="btn-chip" href="https://github.com/ici77" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
 
+          <!-- 6 -->
           <article class="project-card">
-            <a class="project-media" href="https://www.inmacontreras.com/#/curso/html" target="_blank" rel="noreferrer" aria-label="Lenguajes de marcas - Visitar sitio">
-              <img src="htmlycss.png" alt="Lenguajes de marcas — portada" />
+            <a class="project-media" href="https://www.inmacontreras.com/#/curso/html" target="_blank" rel="noreferrer">
+              <img src="htmlycss.png" alt="Lenguajes de marcas — portada">
             </a>
             <div class="project-body">
-              <h3 class="project-title">Lenguajes de marcas</h3>
-              <p class="project-desc">UF1841 · Contenidos y prácticas de HTML y CSS.</p>
+              <h3 class="project-title">Lenguajes de marcas
+                <span class="badge"><ion-icon name="book-outline"></ion-icon> UF1841</span>
+              </h3>
+              <p class="project-desc">Contenidos y prácticas de HTML y CSS.</p>
               <div class="project-links">
-                <a href="https://www.inmacontreras.com/#/curso/html" target="_blank" rel="noreferrer" class="btn-link">Ver curso</a>
-                <a href="https://github.com/ici77" target="_blank" rel="noreferrer" class="btn-link">Código en GitHub</a>
+                <a class="btn-chip" href="https://www.inmacontreras.com/#/curso/html" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
+                <a class="btn-chip" href="https://github.com/ici77" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
-
         </section>
       </article>
 
-      <!-- CONTACTO -->
+      <!-- CONTACTO (sin mapa) -->
       <article id="sec-contact" class="section" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
         <h2 class="h2">Contacto</h2>
-        <p class="lead">¿Colaboramos? Escríbeme y cuéntame tu idea.</p>
-        <form id="contacto" action="https://formspree.io/f/xbjwqkvp" method="POST" novalidate style="margin:16px 0">
-          <div class="grid cols-2">
+        <p class="lead">¿Colaboramos? Completa el formulario y te respondo lo antes posible.</p>
+
+        <form id="contacto" class="contact-card" action="https://formspree.io/f/xbjwqkvp" method="POST" novalidate>
+          <div class="contact-grid">
             <label>
               <span class="small">Nombre</span>
-              <input name="name" required placeholder="Tu nombre" aria-required="true"
-                style="width:100%;padding:.8rem 1rem;border-radius:12px;background:#fff;border:1px solid var(--color-border);color:var(--color-ink)" />
+              <input class="input" name="name" required placeholder="Tu nombre" aria-required="true">
             </label>
             <label>
               <span class="small">Email</span>
-              <input name="email" type="email" required placeholder="tu@email.com" aria-required="true"
-                style="width:100%;padding:.8rem 1rem;border-radius:12px;background:#fff;border:1px solid var(--color-border);color:var(--color-ink)" />
+              <input class="input" name="email" type="email" required placeholder="tu@email.com" aria-required="true">
             </label>
           </div>
           <label>
             <span class="small">Mensaje</span>
-            <textarea name="message" required rows="5" placeholder="¿En qué puedo ayudarte?"
-              style="width:100%;padding:.8rem 1rem;border-radius:12px;background:#fff;border:1px solid var(--color-border);color:var(--color-ink)"></textarea>
+            <textarea class="input textarea" name="message" required placeholder="¿En qué puedo ayudarte?"></textarea>
           </label>
-          <button id="btnEnviar" class="role" style="margin-top:12px" disabled>
+          <button id="btnEnviar" class="btn" disabled>
             <ion-icon name="paper-plane"></ion-icon> Enviar
           </button>
         </form>
@@ -629,37 +397,62 @@
     </section>
   </main>
 
+  <div id="toast" class="toast" role="status" aria-live="polite">¡Mensaje enviado! ✨</div>
+
   <script>
     /* Tabs accesibles */
     const tabs = document.querySelectorAll('.tab');
     const panels = document.querySelectorAll('.section');
-
-    function activateTab(button) {
-      tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
-      panels.forEach(p => p.setAttribute('aria-hidden', 'true'));
-      button.setAttribute('aria-selected', 'true');
-      document.getElementById(button.getAttribute('aria-controls')).setAttribute('aria-hidden', 'false');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function activateTab(button){
+      tabs.forEach(t=>t.setAttribute('aria-selected','false'));
+      panels.forEach(p=>p.setAttribute('aria-hidden','true'));
+      button.setAttribute('aria-selected','true');
+      document.getElementById(button.getAttribute('aria-controls')).setAttribute('aria-hidden','false');
+      window.scrollTo({top:0,behavior:'smooth'});
     }
-
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => activateTab(btn));
-      btn.addEventListener('keydown', e => {
-        const i = [...tabs].indexOf(btn);
-        if (e.key === 'ArrowRight') tabs[(i + 1) % tabs.length].focus();
-        if (e.key === 'ArrowLeft') tabs[(i - 1 + tabs.length) % tabs.length].focus();
+    tabs.forEach(btn=>{
+      btn.addEventListener('click',()=>activateTab(btn));
+      btn.addEventListener('keydown',(e)=>{
+        const i=[...tabs].indexOf(btn);
+        if(e.key==='ArrowRight') tabs[(i+1)%tabs.length].focus();
+        if(e.key==='ArrowLeft') tabs[(i-1+tabs.length)%tabs.length].focus();
       });
     });
 
-    /* Form: habilitar botón al ser válido */
+    /* Animación de aparición para tarjetas al entrar en viewport */
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('reveal'); io.unobserve(e.target); }
+      });
+    },{threshold:.14});
+    document.querySelectorAll('.project-card').forEach(c=>io.observe(c));
+
+    /* Form: habilitar botón + mini toast de éxito (sin recargar) */
     const form = document.getElementById('contacto');
     const send = document.getElementById('btnEnviar');
-    if (form && send) {
-      form.addEventListener('input', () => {
-        send.disabled = !form.checkValidity();
+    const toast = document.getElementById('toast');
+
+    if(form && send){
+      form.addEventListener('input',()=>{ send.disabled = !form.checkValidity(); });
+
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        send.disabled = true;
+        try{
+          const fd = new FormData(form);
+          const res = await fetch(form.action, { method:'POST', body:fd, headers:{ 'Accept':'application/json' }});
+          if(res.ok){
+            form.reset();
+            toast.classList.add('show');
+            setTimeout(()=>toast.classList.remove('show'), 3000);
+          }else{ alert('No se ha podido enviar. Inténtalo de nuevo.'); }
+        }catch{
+          alert('Error de red. Inténtalo más tarde.');
+        }finally{
+          send.disabled = false;
+        }
       });
     }
   </script>
 </body>
-
 </html>
