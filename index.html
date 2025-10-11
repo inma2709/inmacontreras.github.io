@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Inma Contreras — Portfolio</title>
+  <title>Inma Contreras-Portfolio Docente</title>
   <meta name="description" content="Portfolio de Inma Contreras: docente de desarrollo web, front-end y diseño accesible. Proyectos, formación y contacto." />
   <meta name="theme-color" content="#1E4AAE" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,8 +164,12 @@
     0 14px 30px rgba(30,74,174,.16);
 }
 .btn-raise:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
-/* === Tarjeta Personal === */
+/* Tarjeta: que ocupe todo el ancho del área principal */
 .tarjeta-personal{
+  grid-column: 1 / -1;         /* si el contenedor usa grid, que abarque todas las columnas */
+  width: 100%;
+  max-width: 1000px;           /* límite cómodo para texto grande */
+  margin: 2rem auto 0;         /* centrada y separada del formulario */
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -173,7 +177,6 @@
   border: 1px solid var(--color-border);
   border-radius: 20px;
   padding: 1.5rem;
-  margin-top: 2rem;
   box-shadow: 0 12px 28px rgba(30,74,174,.12);
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -226,6 +229,84 @@
   box-shadow: 0 10px 28px rgba(30,74,174,.3);
 }
 
+    /* === Tarjeta destacada del portfolio personal === */
+.project-highlight{
+  margin-top: 2.5rem;
+  background: linear-gradient(135deg, #f6f8ff 0%, #fff0f4 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(30,74,174,.12);
+  transition: transform .25s ease, box-shadow .25s ease, background .4s ease;
+}
+.project-highlight:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(30,74,174,.18);
+  background: linear-gradient(135deg, #ffffff 0%, #f2f6ff 100%);
+}
+
+.highlight-content{
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.highlight-icon{
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{transform: translateY(0);}
+  50%{transform: translateY(-4px);}
+}
+
+.highlight-content h3{
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  margin: 0;
+}
+.highlight-content p{
+  color: var(--color-muted);
+  max-width: 640px;
+  line-height: 1.6;
+  margin: 0 auto 1rem;
+}
+.highlight-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .7rem 1.2rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(30,74,174,.25);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.highlight-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(30,74,174,.3);
+}
+
+
+/* Responsive: apilar en móviles y centrar contenido */
+@media (max-width: 700px){
+  .tarjeta-personal{
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+  }
+  .tarjeta-foto{
+    width: 150px;
+    height: 150px;
+  }
+}
+
   
   </style>
 </head>
@@ -261,7 +342,7 @@
         <li class="contact-item">
           <span class="icon" aria-hidden="true"><ion-icon name="logo-github"></ion-icon></span>
           <div>
-            <p class="small">GitHub · Proyectos</p>
+            <p class="small">GitHub · Proyectos Desarrollo</p>
             <a href="https://github.com/ici77" target="_blank" rel="noreferrer">github.com/ici77</a>
           </div>
         </li>
@@ -489,7 +570,22 @@
         </section>
       </article>
 
-     <!-- CONTACTO (sin mapa) -->
+      <!-- Tarjeta destacada: Portfolio como Desarrolladora -->
+<div class="project-highlight">
+  <div class="highlight-content">
+    <ion-icon name="sparkles-outline" class="highlight-icon"></ion-icon>
+    <h3>Portfolio como Desarrolladora</h3>
+    <p>
+      Explora mis proyectos personales, ejercicios prácticos y demostraciones
+      de front-end, React y Node.js. Un espacio en constante evolución donde aplico todo lo que enseño.
+    </p>
+    <a href="https://ici77.github.io/inmacontreras/" target="_blank" rel="noreferrer" class="highlight-btn">
+      <ion-icon name="globe-outline"></ion-icon> Visitar mi portfolio
+    </a>
+  </div>
+</div>
+
+<!-- CONTACTO (sin mapa) -->
 <article id="sec-contact" class="section" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
   <h2 class="h2">Contacto</h2>
   <p class="lead">¿Colaboramos? Completa el formulario y te respondo lo antes posible.</p>
@@ -514,10 +610,10 @@
     </button>
   </form>
 
-  <!-- Tarjeta personal debajo del formulario (dentro del artículo) -->
+  <!-- Tarjeta personal debajo del formulario -->
   <div class="tarjeta-personal">
     <figure class="tarjeta-foto">
-      <img src="tarjetainma.png" alt="Inma Contreras — Docente TIC" />
+      <img src="tarjetainma.png" alt="Inma Contreras — Docente TIC">
     </figure>
     <div class="tarjeta-contenido">
       <h3>Inma Contreras</h3>
@@ -528,6 +624,7 @@
     </div>
   </div>
 </article>
+
 
 
 
