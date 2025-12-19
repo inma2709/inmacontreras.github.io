@@ -37,6 +37,20 @@
     button{font:inherit;background:none;border:0;color:inherit;cursor:pointer}
     :focus-visible{outline:3px solid var(--ring);outline-offset:2px}
 
+    /* Tipografía base (faltaba) */
+    .h2{margin:0 0 .35rem;font-size:clamp(1.4rem,2.2vw,1.75rem);letter-spacing:-.02em}
+    .h3{margin:0 0 .35rem;font-size:1.05rem}
+    .lead{margin:.25rem 0 1.25rem;color:var(--color-muted);max-width:72ch}
+    .destacado{
+      margin:1.1rem 0 0;
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      border:1px solid var(--color-border);
+      background:linear-gradient(135deg,#ffffff 0%, #f6f8ff 100%);
+      box-shadow:0 10px 24px rgba(30,74,174,.10);
+      color:var(--color-ink);
+    }
+
     main{max-width:1200px;margin-inline:auto;padding:16px;display:grid;gap:24px}
     @media (min-width:980px){
       main{grid-template-columns:320px 1fr;align-items:start}
@@ -76,6 +90,18 @@
     .tl-title{font-weight:600}
     .tl-meta{color:var(--color-primary);font-size:.9rem}
 
+    /* Chips de especialidades (nuevo, RRHH-friendly) */
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:.8rem 0 0;padding:0;list-style:none}
+    .chip{
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.35rem .6rem;border-radius:999px;
+      border:1px solid var(--color-border);
+      background:#fff;
+      font-size:.85rem;color:var(--color-ink);
+      box-shadow:0 8px 20px rgba(30,74,174,.06);
+    }
+    .chip ion-icon{color:var(--color-primary);font-size:1rem}
+
     .projects-static{display:grid;grid-template-columns:1fr;gap:18px}
     @media (min-width:720px){ .projects-static{ grid-template-columns:repeat(2,1fr) } }
     @media (min-width:1024px){ .projects-static{ grid-template-columns:repeat(3,1fr) } }
@@ -89,7 +115,7 @@
 
     .project-media{aspect-ratio:16/10;background:#faf5f7;display:block;overflow:hidden}
     .project-media img{width:100%;height:100%;object-fit:cover;display:block}
-    .project-body{padding:14px 14px 12px;display:flex;flex-direction:column;gap:.5rem}
+    .project-body{padding:14px 14px 12px;display:flex;flex-direction:column;gap:.45rem}
     .project-title{margin:0;font-size:1.05rem;font-weight:600}
     .project-desc{margin:0;font-size:.92rem;color:var(--color-muted)}
     .badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;padding:.25rem .55rem;border-radius:999px;background:#f0f6ff;color:#1e40af;border:1px solid #e6efff}
@@ -97,6 +123,25 @@
     .btn-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .7rem;border-radius:999px;font-size:.85rem;background:#fff;border:1px solid var(--color-border);box-shadow:0 6px 16px rgba(236,72,153,.10)}
     .btn-chip:hover{box-shadow:0 8px 18px rgba(236,72,153,.15)}
     .btn-chip ion-icon{font-size:1rem;color:#ec4899}
+
+    /* Línea “competencias” (nuevo) */
+    .project-meta{
+      margin:0;
+      font-size:.82rem;
+      color:var(--color-muted);
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:.18rem .5rem;
+      border-radius:999px;
+      border:1px solid var(--color-border);
+      background:#fff;
+      color:var(--color-ink);
+    }
 
     .logo-hero{display:flex;justify-content:center;align-items:center;margin-bottom:1.5rem;background:linear-gradient(135deg,#f9d6e2 0%,#e0ecff 100%);padding:1.5rem;border-radius:20px;box-shadow:0 8px 25px rgba(236,72,153,.15)}
     .logo-hero img{width:280px;height:auto;border-radius:16px;background:#fff;padding:10px 20px;box-shadow:0 6px 18px rgba(30,74,174,.15);animation:float 5s ease-in-out infinite}
@@ -182,78 +227,14 @@
     }
     .tarjeta-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(30,74,174,.3); }
 
-    .project-highlight{
-      margin-top: 2.5rem;
-      background: linear-gradient(135deg, #f6f8ff 0%, #fff0f4 100%);
-      border: 1px solid var(--color-border);
-      border-radius: 22px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      box-shadow: 0 12px 28px rgba(30,74,174,.12);
-      transition: transform .25s ease, box-shadow .25s ease, background .4s ease;
-    }
-    .project-highlight:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(30,74,174,.18);
-      background: linear-gradient(135deg, #ffffff 0%, #f2f6ff 100%);
-    }
-
-    .highlight-content{
-      max-width: 720px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-    .highlight-icon{
-      font-size: 2.2rem;
-      color: var(--color-primary);
-      animation: float2 3s ease-in-out infinite;
-    }
-    @keyframes float2{
-      0%,100%{transform: translateY(0);}
-      50%{transform: translateY(-4px);}
-    }
-
-    .highlight-content h3{
-      font-size: 1.4rem;
-      color: var(--color-primary);
-      margin: 0;
-    }
-    .highlight-content p{
-      color: var(--color-muted);
-      max-width: 640px;
-      line-height: 1.6;
-      margin: 0 auto 1rem;
-    }
-    .highlight-btn{
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      padding: .7rem 1.2rem;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-      color: #fff;
-      font-weight: 500;
-      text-decoration: none;
-      box-shadow: 0 6px 20px rgba(30,74,174,.25);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .highlight-btn:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 10px 30px rgba(30,74,174,.3);
-    }
-
     @media (max-width: 700px){
       .tarjeta-personal{ flex-direction: column; text-align: center; padding: 1.25rem; }
       .tarjeta-foto{ width: 150px; height: 150px; }
     }
 
-    /* Preferencias de movimiento reducido */
     @media (prefers-reduced-motion: reduce){
       *{scroll-behavior:auto !important}
-      .project-card, .logo-hero img, .highlight-icon{animation:none !important; transition:none !important}
+      .project-card, .logo-hero img{animation:none !important; transition:none !important}
     }
   </style>
 </head>
@@ -268,7 +249,7 @@
         <img src="inma.png" alt="Avatar de Inma Contreras" width="300" height="300" loading="eager" decoding="async" />
       </figure>
       <h1 class="name">Inma Contreras</h1>
-      <p class="role"><ion-icon name="code-slash"></ion-icon> Docente TIC. FPE</p>
+      <p class="role"><ion-icon name="code-slash"></ion-icon> Docente TIC · Desarrollo Web</p>
 
       <ul class="contact-list" aria-label="Datos de contacto">
         <li class="contact-item">
@@ -290,7 +271,7 @@
         <li class="contact-item">
           <span class="icon" aria-hidden="true"><ion-icon name="logo-github"></ion-icon></span>
           <div>
-            <p class="small">GitHub · Proyectos Desarrollo</p>
+            <p class="small">GitHub</p>
             <a href="https://github.com/ici77" target="_blank" rel="noreferrer">github.com/ici77</a>
           </div>
         </li>
@@ -327,43 +308,28 @@
         </div>
 
         <section class="intro">
-          <h2 class="h2">Formar en tecnología, transformar personas 💻✨</h2>
-
-          <p>
-            Me dedico a formar a la próxima generación de profesionales en
-            <strong>desarrollo web, programación y gestión de datos</strong>. Actualmente, como tutora del certificado profesional
-            <strong>IFCD0210 — Desarrollo de Aplicaciones con Tecnologías Web</strong>, acompaño a mi alumnado en un recorrido completo
-            por el <strong>front-end y el back-end</strong>: desde la maquetación con <strong>HTML5 y CSS3</strong>, la
-            programación con <strong>JavaScript</strong> y <strong>React</strong>, hasta la creación de
-            <strong>servidores con Node.js y Express</strong> y la gestión de bases de datos <strong>SQL</strong>.
+          <h2 class="h2">Docencia TIC orientada a empleabilidad y proyectos reales</h2>
+          <p class="lead">
+            Formo a alumnado en <strong>desarrollo web</strong> (front-end y back-end) con un enfoque práctico:
+            aprendizaje por proyectos, resolución de problemas y estándares de <strong>calidad, accesibilidad y buenas prácticas</strong>.
           </p>
 
           <p>
-            Mi formación técnica y experiencia en <strong>HTML, CSS, JavaScript, React, Node.js, Express y SQL</strong>, unidas a mi
-            habilitación pedagógica, me permiten impartir y coordinar los distintos módulos del certificado (UF1841, UF1842, UF1843 y UF1844),
-            adaptando cada uno a las <strong>necesidades del mercado actual</strong> y a los objetivos de aprendizaje de cada grupo.
+            Actualmente imparto el certificado <strong>IFCD0210</strong> y diseño materiales didácticos para
+            <strong>HTML, CSS, JavaScript, React, Node.js/Express</strong> y <strong>SQL</strong>, integrando metodologías
+            de aula, evaluación y acompañamiento individual.
           </p>
 
-          <p>
-            Además, afronto con entusiasmo el reto de integrar las tecnologías de <strong>desarrollo web moderno</strong> con una
-            <strong>metodología didáctica inclusiva y transformadora</strong>.
-          </p>
-
-          <p>
-            He elegido la docencia en competencias digitales porque creo que
-            <em>no es la tecnología la que transforma, sino la ilusión del cambio, el uso consciente y el acompañamiento honesto</em>.
-          </p>
-
-          <p>
-            Mi experiencia profesional me ha enseñado a escuchar, resolver y conectar. Todo ello me sitúa en el camino perfecto
-            para acompañar a quienes comienzan en el mundo de la tecnología, compartiendo con ellos todo lo que sé y todo lo que he vivido.
-          </p>
+          <ul class="chips" aria-label="Especialidades">
+            <li class="chip"><ion-icon name="checkmark-circle-outline"></ion-icon> Metodología por proyectos</li>
+            <li class="chip"><ion-icon name="accessibility-outline"></ion-icon> Accesibilidad (WCAG)</li>
+            <li class="chip"><ion-icon name="code-slash-outline"></ion-icon> Front-end (HTML/CSS/JS/React)</li>
+            <li class="chip"><ion-icon name="server-outline"></ion-icon> Back-end (Node/Express)</li>
+            <li class="chip"><ion-icon name="hardware-chip-outline"></ion-icon> SQL &amp; modelado</li>
+          </ul>
 
           <p class="destacado">
-            Hoy me mueve la pasión.<br>
-            Pero no una pasión cualquiera: es la pasión por la <strong>transformación</strong>, por un cambio que impulsa,
-            que construye, que nos proyecta hacia un futuro mejor.<br>
-            <strong>Porque cuando se enseña con pasión, la transformación es inevitable.</strong>
+            Mi objetivo: que el alumnado <strong>salga con portfolio</strong>, comprensión técnica real y autonomía para incorporarse al mercado.
           </p>
         </section>
 
@@ -375,6 +341,7 @@
       <!-- RESUME -->
       <article id="sec-resume" class="section" role="tabpanel" aria-labelledby="tab-resume" aria-hidden="true">
         <h2 class="h2">Formación y Trayectoria Profesional</h2>
+        <p class="lead">Formación técnica + experiencia en gestión y liderazgo, aplicadas a la docencia y al acompañamiento profesional.</p>
 
         <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin-bottom:1.5rem;">
           <figure class="cv-figure">
@@ -392,7 +359,7 @@
             <h3 class="h3">Educación</h3>
             <ol class="timeline">
               <li class="tl-item">
-                <div class="tl-title">Grado Superior de Desarrollo de Aplicaciones Multiplataforma (DAM)</div>
+                <div class="tl-title">Grado Superior DAM</div>
                 <div class="tl-meta">Salesianas Nervión · 2023–2025</div>
                 <p class="small">Bases de datos, Android, programación. <strong>Nota media: 8,67</strong>.</p>
               </li>
@@ -402,11 +369,11 @@
                 <p class="small">Especialidad en Empresa.</p>
               </li>
               <li class="tl-item">
-                <div class="tl-title">MAES — Profesorado de Secundaria, FP e Idiomas</div>
+                <div class="tl-title">MAES — Profesorado</div>
                 <div class="tl-meta">VIU · 2015</div>
               </li>
-               <li class="tl-item">
-                <div class="tl-title">Formación en igualdad y teleformación.</div>
+              <li class="tl-item">
+                <div class="tl-title">Formación en igualdad y teleformación</div>
                 <div class="tl-meta">2025</div>
               </li>
             </ol>
@@ -418,12 +385,12 @@
               <li class="tl-item">
                 <div class="tl-title">Docente de Desarrollo Web</div>
                 <div class="tl-meta">Septiembre 2025 — Presente</div>
-                <p class="small">Diseño de materiales, quizzes y portfolios.</p>
+                <p class="small">Diseño de contenidos, actividades evaluables, repositorios y portfolios; seguimiento y tutorización.</p>
               </li>
               <li class="tl-item">
                 <div class="tl-title">BBVA — Gestora Comercial</div>
                 <div class="tl-meta">1999 — 2021</div>
-                <p class="small">Gestión de clientes y objetivos. Constancia y liderazgo aplicados a la docencia.</p>
+                <p class="small">Gestión de clientes y objetivos; comunicación, liderazgo y orientación a resultados.</p>
               </li>
             </ol>
           </section>
@@ -433,7 +400,10 @@
       <!-- PORTFOLIO -->
       <article id="sec-portfolio" class="section" role="tabpanel" aria-labelledby="tab-portfolio" aria-hidden="true">
         <h2 class="h2">Proyectos</h2>
-        <p class="lead">Selección de trabajos docentes y materiales de apoyo (front-end y back-end).</p>
+        <p class="lead">
+          Materiales docentes y proyectos técnicos que demuestran mi enfoque: <strong>aprendizaje por proyectos</strong>,
+          claridad pedagógica, y buenas prácticas (estructura, accesibilidad, calidad y despliegue).
+        </p>
 
         <section class="projects-static" aria-label="Listado de proyectos">
           <!-- 1 -->
@@ -445,9 +415,12 @@
               <h3 class="project-title">Lecciones para clase. HTML &amp; CSS y Bootstrap
                 <span class="badge"><ion-icon name="code-slash"></ion-icon> Front-end</span>
               </h3>
-              <p class="project-desc">Lecciones y prácticas para aprender HTML, CSS y Bootstrap con un enfoque aplicado.</p>
+              <p class="project-desc">Un recorrido didáctico con ejercicios guiados para maquetación, componentes y diseño responsive.</p>
+              <p class="project-meta">
+                <span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">Bootstrap</span><span class="pill">Responsive</span>
+              </p>
               <div class="project-links">
-                <a class="btn-chip" href="https://bootstrapyanimaciones.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+                <a class="btn-chip" href="https://bootstrapyanimaciones.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
@@ -462,9 +435,12 @@
               <h3 class="project-title">Ahora JavaScript
                 <span class="badge"><ion-icon name="flash-outline"></ion-icon> JS</span>
               </h3>
-              <p class="project-desc">Ejercicios y retos para afianzar JavaScript desde nivel inicial a intermedio.</p>
+              <p class="project-desc">Retos graduados para dominar lógica, DOM, eventos y prácticas habituales de desarrollo.</p>
+              <p class="project-meta">
+                <span class="pill">JS</span><span class="pill">DOM</span><span class="pill">Eventos</span><span class="pill">Fetch</span>
+              </p>
               <div class="project-links">
-                <a class="btn-chip" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Netlify</a>
+                <a class="btn-chip" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/javascript" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
@@ -479,9 +455,12 @@
               <h3 class="project-title">React — Componentes básicos
                 <span class="badge"><ion-icon name="logo-react"></ion-icon> React</span>
               </h3>
-              <p class="project-desc">Estados, props y rutas con Vite para proyectos educativos.</p>
+              <p class="project-desc">Componentes, props, estado y rutas con Vite para crear proyectos educativos escalables.</p>
+              <p class="project-meta">
+                <span class="pill">React</span><span class="pill">Vite</span><span class="pill">Props/State</span><span class="pill">Router</span>
+              </p>
               <div class="project-links">
-                <a class="btn-chip" href="https://react-lac-beta-68.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+                <a class="btn-chip" href="https://react-lac-beta-68.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/react" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
@@ -496,9 +475,12 @@
               <h3 class="project-title">Despliegue de aplicaciones web
                 <span class="badge"><ion-icon name="cloud-upload-outline"></ion-icon> Deploy</span>
               </h3>
-              <p class="project-desc">Publicación de proyectos en producción con Vercel, Git y flujos de despliegue.</p>
+              <p class="project-desc">Guía práctica para publicar proyectos: repositorios, builds, entornos y buenas prácticas en producción.</p>
+              <p class="project-meta">
+                <span class="pill">Git</span><span class="pill">Vercel</span><span class="pill">CI/CD</span><span class="pill">Entornos</span>
+              </p>
               <div class="project-links">
-                <a class="btn-chip" href="https://despliegue-ten-pink.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+                <a class="btn-chip" href="https://despliegue-ten-pink.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/despliegue" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
@@ -513,9 +495,12 @@
               <h3 class="project-title">Manual de SQL
                 <span class="badge"><ion-icon name="server-outline"></ion-icon> Bases de datos</span>
               </h3>
-              <p class="project-desc">Manual práctico de SQL con ejemplos, consultas y ejercicios.</p>
+              <p class="project-desc">Consultas, modelado y ejercicios orientados a proyectos reales (reporting, CRUD y relaciones).</p>
+              <p class="project-meta">
+                <span class="pill">SQL</span><span class="pill">JOIN</span><span class="pill">Modelado</span><span class="pill">Consultas</span>
+              </p>
               <div class="project-links">
-                <a class="btn-chip" href="https://sql-gules-seven.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+                <a class="btn-chip" href="https://sql-gules-seven.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/sql" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
@@ -530,9 +515,12 @@
               <h3 class="project-title">Nomenclatura de archivos y carpetas
                 <span class="badge"><ion-icon name="folder-outline"></ion-icon> Buenas prácticas</span>
               </h3>
-              <p class="project-desc">Guía de buenas prácticas para nombrar archivos y carpetas en proyectos.</p>
+              <p class="project-desc">Criterios claros para ordenar proyectos, mejorar mantenibilidad y trabajo en equipo.</p>
+              <p class="project-meta">
+                <span class="pill">Convenciones</span><span class="pill">Mantenibilidad</span><span class="pill">Equipo</span>
+              </p>
               <div class="project-links">
-                <a class="btn-chip" href="https://nomenclatura-ivory.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+                <a class="btn-chip" href="https://nomenclatura-ivory.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/nomenclatura" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
@@ -547,9 +535,12 @@
               <h3 class="project-title">Manual de MongoDB
                 <span class="badge"><ion-icon name="leaf-outline"></ion-icon> NoSQL</span>
               </h3>
-              <p class="project-desc">Manual práctico de MongoDB con ejemplos y ejercicios aplicados.</p>
+              <p class="project-desc">Introducción práctica a NoSQL: colecciones, consultas y casos de uso en aplicaciones web.</p>
+              <p class="project-meta">
+                <span class="pill">MongoDB</span><span class="pill">NoSQL</span><span class="pill">Consultas</span>
+              </p>
               <div class="project-links">
-                <a class="btn-chip" href="https://mongoo-manual.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+                <a class="btn-chip" href="https://mongoo-manual.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/MongooManual" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
@@ -564,9 +555,12 @@
               <h3 class="project-title">Entorno servidor con Node.js
                 <span class="badge"><ion-icon name="hardware-chip-outline"></ion-icon> UF1844</span>
               </h3>
-              <p class="project-desc">Entorno servidor con Node.js: configuración, rutas y fundamentos backend.</p>
+              <p class="project-desc">Fundamentos backend: rutas, controladores, persistencia y estructura de proyectos.</p>
+              <p class="project-meta">
+                <span class="pill">Node.js</span><span class="pill">Express</span><span class="pill">REST</span><span class="pill">JSON</span>
+              </p>
               <div class="project-links">
-                <a class="btn-chip" href="https://entorno-servidor-71vh.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+                <a class="btn-chip" href="https://entorno-servidor-71vh.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/entornoServidor" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
@@ -579,9 +573,12 @@
             </a>
             <div class="project-body">
               <h3 class="project-title">CRUD Canciones
-                <span class="badge"><ion-icon name="construct-outline"></ion-icon> UF1844</span>
+                <span class="badge"><ion-icon name="construct-outline"></ion-icon> Full Stack</span>
               </h3>
-              <p class="project-desc">Aplicación Full Stack con Node.js y Express para gestionar canciones con persistencia en JSON.</p>
+              <p class="project-desc">Proyecto de consolidación: API REST con persistencia local y documentación de uso.</p>
+              <p class="project-meta">
+                <span class="pill">Node</span><span class="pill">Express</span><span class="pill">CRUD</span><span class="pill">API REST</span>
+              </p>
               <div class="project-links">
                 <a class="btn-chip" href="https://github.com/inma2709/crudCanciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
@@ -595,9 +592,12 @@
             </a>
             <div class="project-body">
               <h3 class="project-title">Bazar Full Stack
-                <span class="badge"><ion-icon name="layers-outline"></ion-icon> Full Stack</span>
+                <span class="badge"><ion-icon name="layers-outline"></ion-icon> Proyecto completo</span>
               </h3>
-              <p class="project-desc">Backend Node/Express con SQL y dos frontends: React y HTML/CSS.</p>
+              <p class="project-desc">Backend con SQL y API REST + dos frontends (React y HTML/CSS) para demostrar arquitectura completa.</p>
+              <p class="project-meta">
+                <span class="pill">SQL</span><span class="pill">API REST</span><span class="pill">React</span><span class="pill">Arquitectura</span>
+              </p>
               <div class="project-links">
                 <a class="btn-chip" href="https://github.com/inma2709/bazarCompleto" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
@@ -613,7 +613,10 @@
               <h3 class="project-title">Senderos
                 <span class="badge"><ion-icon name="trail-sign-outline"></ion-icon> Backend</span>
               </h3>
-              <p class="project-desc">Frontend HTML/CSS y backend Node/Express con persistencia en JSON.</p>
+              <p class="project-desc">Ejercicio completo para entender rutas, middleware y persistencia simple con JSON.</p>
+              <p class="project-meta">
+                <span class="pill">Node</span><span class="pill">Express</span><span class="pill">Middleware</span>
+              </p>
               <div class="project-links">
                 <a class="btn-chip" href="https://github.com/inma2709/ejercicioSenderos" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
@@ -627,9 +630,12 @@
             </a>
             <div class="project-body">
               <h3 class="project-title">Ejercicio MongoDB
-                <span class="badge"><ion-icon name="leaf-outline"></ion-icon> NoSQL</span>
+                <span class="badge"><ion-icon name="leaf-outline"></ion-icon> Full Stack</span>
               </h3>
-              <p class="project-desc">Frontend HTML/CSS y backend Node/Express con persistencia en MongoDB.</p>
+              <p class="project-desc">Frontend + backend con MongoDB para practicar persistencia real y operaciones CRUD.</p>
+              <p class="project-meta">
+                <span class="pill">MongoDB</span><span class="pill">CRUD</span><span class="pill">Express</span>
+              </p>
               <div class="project-links">
                 <a class="btn-chip" href="https://github.com/inma2709/ejercicioMongoo" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
@@ -645,9 +651,12 @@
               <h3 class="project-title">Consumo de API externa (GIPHY)
                 <span class="badge"><ion-icon name="swap-horizontal-outline"></ion-icon> API</span>
               </h3>
-              <p class="project-desc">Consumo de API pública con fetch y async/await para mostrar resultados dinámicos.</p>
+              <p class="project-desc">Búsqueda y renderizado de resultados consumiendo una API pública con fetch y asincronía.</p>
+              <p class="project-meta">
+                <span class="pill">Fetch</span><span class="pill">Async/Await</span><span class="pill">JSON</span>
+              </p>
               <div class="project-links">
-                <a class="btn-chip" href="https://giphy-one-alpha.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+                <a class="btn-chip" href="https://giphy-one-alpha.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/giphy" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
@@ -662,22 +671,23 @@
               <h3 class="project-title">Usabilidad y Accesibilidad Web
                 <span class="badge"><ion-icon name="accessibility-outline"></ion-icon> UF1843</span>
               </h3>
-              <p class="project-desc">Manual sobre usabilidad, accesibilidad, estándares y buenas prácticas de diseño inclusivo.</p>
+              <p class="project-desc">Manual didáctico con estándares, checklist y criterios para diseñar experiencias inclusivas.</p>
+              <p class="project-meta">
+                <span class="pill">WCAG</span><span class="pill">UX</span><span class="pill">Diseño inclusivo</span>
+              </p>
               <div class="project-links">
-                <a class="btn-chip" href="https://uf1843uxyaccesibilidad.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+                <a class="btn-chip" href="https://uf1843uxyaccesibilidad.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/uf1843uxyaccesibilidad" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
         </section>
-
-       
       </article>
 
       <!-- CONTACTO -->
       <article id="sec-contact" class="section" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
         <h2 class="h2">Contacto</h2>
-        <p class="lead">¿Colaboramos? Completa el formulario y te respondo lo antes posible.</p>
+        <p class="lead">¿Colaboramos? Envíame un mensaje y respondo lo antes posible.</p>
 
         <form id="contacto" class="contact-card" action="https://formspree.io/f/xbjwqkvp" method="POST" novalidate>
           <div class="contact-grid">
@@ -692,7 +702,7 @@
           </div>
           <label>
             <span class="small">Mensaje</span>
-            <textarea class="input textarea" name="message" required placeholder="Me encanta oír proyectos nuevos..."></textarea>
+            <textarea class="input textarea" name="message" required placeholder="Cuéntame tu necesidad (docencia, proyecto, colaboración)..."></textarea>
           </label>
           <button id="btnEnviar" class="btn" disabled>
             <ion-icon name="paper-plane"></ion-icon> Enviar
@@ -705,7 +715,7 @@
           </figure>
           <div class="tarjeta-contenido">
             <h3>Inma Contreras</h3>
-            <p>Docente de Desarrollo Web y Formadora en Competencias Digitales.</p>
+            <p>Docente de Desarrollo Web · IFCD0210 · Accesibilidad y proyectos reales.</p>
             <a href="https://www.inmacontreras.com" target="_blank" rel="noreferrer" class="tarjeta-btn">
               <ion-icon name="globe-outline"></ion-icon> Visitar mi web
             </a>
@@ -718,23 +728,16 @@
   <div id="toast" class="toast" role="status" aria-live="polite">¡Mensaje enviado! ✨</div>
 
   <script>
-    /* Tabs accesibles (con tabindex y Home/End) */
     const tabs = document.querySelectorAll('.tab');
     const panels = document.querySelectorAll('.section');
 
     function activateTab(button){
-      tabs.forEach(t => {
-        t.setAttribute('aria-selected','false');
-        t.setAttribute('tabindex','-1');
-      });
+      tabs.forEach(t => { t.setAttribute('aria-selected','false'); t.setAttribute('tabindex','-1'); });
       panels.forEach(p => p.setAttribute('aria-hidden','true'));
-
       button.setAttribute('aria-selected','true');
       button.setAttribute('tabindex','0');
-
       const panelId = button.getAttribute('aria-controls');
       document.getElementById(panelId).setAttribute('aria-hidden','false');
-
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -743,53 +746,34 @@
       btn.addEventListener('keydown', (e) => {
         const list = [...tabs];
         const i = list.indexOf(btn);
-
         if(e.key === 'ArrowRight') { list[(i+1)%list.length].focus(); }
         if(e.key === 'ArrowLeft')  { list[(i-1+list.length)%list.length].focus(); }
         if(e.key === 'Home')       { list[0].focus(); }
         if(e.key === 'End')        { list[list.length-1].focus(); }
-
-        if(e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          activateTab(btn);
-        }
+        if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateTab(btn); }
       });
     });
 
-    /* Animación de aparición para tarjetas */
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if(e.isIntersecting){
-          e.target.classList.add('reveal');
-          io.unobserve(e.target);
-        }
+        if(e.isIntersecting){ e.target.classList.add('reveal'); io.unobserve(e.target); }
       });
     }, { threshold: .14 });
-
     document.querySelectorAll('.project-card').forEach(c => io.observe(c));
 
-    /* Form: habilitar botón + toast */
     const form = document.getElementById('contacto');
     const send = document.getElementById('btnEnviar');
     const toast = document.getElementById('toast');
 
     if(form && send){
-      form.addEventListener('input', () => {
-        send.disabled = !form.checkValidity();
-      });
+      form.addEventListener('input', () => { send.disabled = !form.checkValidity(); });
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         send.disabled = true;
-
         try{
           const fd = new FormData(form);
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: fd,
-            headers: { 'Accept': 'application/json' }
-          });
-
+          const res = await fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
           if(res.ok){
             form.reset();
             toast.classList.add('show');
