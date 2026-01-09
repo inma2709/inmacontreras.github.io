@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inma Contreras — Portfolio Docente</title>
-  <meta name="description" content="Portfolio profesional de Inma Contreras, docente TIC especializada en desarrollo web. Incluye trayectoria, materiales formativos (manuales y ejercicios) y proyectos demostrativos." />
+  <meta name="description" content="Portfolio profesional de Inma Contreras, docente TIC especializada en desarrollo web. Incluye trayectoria, materiales formativos (manuales y ejercicios) y proyectos[...]
   <meta name="theme-color" content="#1E4AAE" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,8 +60,15 @@
 
     nav.nav{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);
       border:1px solid var(--color-border);border-radius:16px;padding:6px;display:flex;gap:6px;flex-wrap:wrap;z-index:5}
-    .tab{padding:.65rem .9rem;border-radius:12px;color:var(--color-muted);transition:background .2s ease, transform .2s ease}
-    .tab[aria-selected="true"], .tab:hover{background:#fff;color:var(--color-ink);border:1px solid var(--color-border);box-shadow:0 6px 18px rgba(30,74,174,.08)}
+    .tab{padding:.65rem .9rem;border-radius:12px;color:var(--color-muted);
+      border:1px solid transparent;
+      background:transparent;
+      transition:background .2s ease, transform .2s ease, border-color .2s ease}
+    .tab[aria-selected="true"], .tab:hover{
+      background:#fff;
+      color:var(--color-ink);
+      border-color:var(--color-border);
+      box-shadow:0 6px 18px rgba(30,74,174,.08)}
     .tab:active{transform:scale(.98)}
     .section{display:none;padding:24px}
     .section[aria-hidden="false"]{display:block}
@@ -94,15 +101,15 @@
     .project-desc{margin:0;font-size:.92rem;color:var(--color-muted)}
     .badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;padding:.25rem .55rem;border-radius:999px;background:#f0f6ff;color:#1e40af;border:1px solid #e6efff}
     .project-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:.35rem}
-    .btn-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .7rem;border-radius:999px;font-size:.85rem;background:#fff;border:1px solid var(--color-border);box-shadow:0 6px 16px rgba(236,72,153,.10)}
+    .btn-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .7rem;border-radius:999px;font-size:.85rem;background:#fff;border:1px solid var(--color-border);box-shadow:0 6px 16px rgba(236,72,153,.08);transition:box-shadow .2s ease}
     .btn-chip:hover{box-shadow:0 8px 18px rgba(236,72,153,.15)}
     .btn-chip ion-icon{font-size:1rem;color:#ec4899}
 
-    .logo-hero{display:flex;justify-content:center;align-items:center;margin-bottom:1.5rem;background:linear-gradient(135deg,#f9d6e2 0%,#e0ecff 100%);padding:1.5rem;border-radius:20px;box-shadow:0 8px 25px rgba(236,72,153,.15)}
+    .logo-hero{display:flex;justify-content:center;align-items:center;margin-bottom:1.5rem;background:linear-gradient(135deg,#f9d6e2 0%,#e0ecff 100%);padding:1.5rem;border-radius:20px;box-shadow:0 8px 24px rgba(30,74,174,.1)}
     .logo-hero img{width:280px;height:auto;border-radius:16px;background:#fff;padding:10px 20px;box-shadow:0 6px 18px rgba(30,74,174,.15);animation:float 5s ease-in-out infinite}
     @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
 
-    .hero-photo-wrap{display:flex;justify-content:center;align-items:center;margin-top:2rem;padding:1.5rem;background:linear-gradient(135deg,#e0ecff 0%,#fde8ef 100%);border-radius:24px;box-shadow:0 8px 25px rgba(30,74,174,.15)}
+    .hero-photo-wrap{display:flex;justify-content:center;align-items:center;margin-top:2rem;padding:1.5rem;background:linear-gradient(135deg,#e0ecff 0%,#fde8ef 100%);border-radius:24px;box-shadow:0 8px 24px rgba(30,74,174,.1)}
     .hero-photo{width:70%;max-width:700px;height:auto;border-radius:18px;background:#fff;padding:8px;box-shadow:0 6px 20px rgba(30,74,174,.15);object-fit:cover}
 
     .contact-card{background:#fff;border:1px solid var(--color-border);border-radius:18px;box-shadow:var(--shadow-1);padding:16px}
@@ -182,13 +189,11 @@
     }
     .tarjeta-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(30,74,174,.3); }
 
-    /* Preferencias de movimiento reducido */
     @media (prefers-reduced-motion: reduce){
       *{scroll-behavior:auto !important}
       .project-card, .logo-hero img{animation:none !important; transition:none !important}
     }
 
-    /* ===== Subtabs en Materiales: Manuales / Ejercicios ===== */
     .subnav{
       position: sticky;
       top: 64px;
@@ -207,12 +212,14 @@
       padding: .55rem .85rem;
       border-radius: 12px;
       color: var(--color-muted);
-      transition: background .2s ease, transform .2s ease;
+      border: 1px solid transparent;
+      background: transparent;
+      transition: background .2s ease, transform .2s ease, border-color .2s ease;
     }
     .subtab[aria-selected="true"], .subtab:hover{
       background: #fff;
       color: var(--color-ink);
-      border: 1px solid var(--color-border);
+      border-color: var(--color-border);
       box-shadow: 0 6px 18px rgba(30,74,174,.08);
     }
     .subtab:active{ transform: scale(.98); }
@@ -225,7 +232,6 @@
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
   <main id="contenido">
-    <!-- Sidebar -->
     <aside class="sidebar" aria-label="Perfil y contactos">
       <figure class="avatar">
         <img src="inma2.png" alt="Avatar de Inma Contreras" width="300" height="300" loading="eager" decoding="async" />
@@ -274,7 +280,6 @@
       </div>
     </aside>
 
-    <!-- Columna principal -->
     <section aria-label="Contenido principal">
       <nav class="nav" role="tablist" aria-label="Secciones del portfolio">
         <button class="tab" role="tab" aria-selected="true" aria-controls="sec-about" id="tab-about" tabindex="0">Sobre mí</button>
@@ -284,7 +289,6 @@
         <button class="tab" role="tab" aria-selected="false" aria-controls="sec-contact" id="tab-contact" tabindex="-1">Contacto</button>
       </nav>
 
-      <!-- ABOUT -->
       <article id="sec-about" class="section" role="tabpanel" aria-labelledby="tab-about" aria-hidden="false">
         <div class="logo-hero">
           <img src="logo.png" alt="Logo personal de Inma Contreras" loading="eager" decoding="async">
@@ -308,7 +312,6 @@
         </div>
       </article>
 
-      <!-- RESUME -->
       <article id="sec-resume" class="section" role="tabpanel" aria-labelledby="tab-resume" aria-hidden="true">
         <h2 class="h2">Formación y Trayectoria Profesional</h2>
 
@@ -374,7 +377,6 @@
         </div>
       </article>
 
-      <!-- MATERIALES -->
       <article id="sec-materials" class="section" role="tabpanel" aria-labelledby="tab-materials" aria-hidden="true">
         <h2 class="h2">Materiales</h2>
         <p class="lead">Manuales y ejercicios para formación en desarrollo web y bases de datos.</p>
@@ -388,7 +390,6 @@
           </button>
         </nav>
 
-        <!-- Manuales -->
         <section id="mat-manuales" class="subpanel" role="tabpanel" aria-labelledby="mat-tab-manuales" aria-hidden="false">
           <section class="projects-static" aria-label="Manuales">
             <article class="project-card">
@@ -489,7 +490,6 @@
           </section>
         </section>
 
-        <!-- Ejercicios -->
         <section id="mat-ejercicios" class="subpanel" role="tabpanel" aria-labelledby="mat-tab-ejercicios" aria-hidden="true">
           <section class="projects-static" aria-label="Ejercicios">
             <article class="project-card">
@@ -556,7 +556,6 @@
         </section>
       </article>
 
-      <!-- PORTFOLIO -->
       <article id="sec-portfolio" class="section" role="tabpanel" aria-labelledby="tab-portfolio" aria-hidden="true">
         <h2 class="h2">Proyectos</h2>
         <p class="lead">Selección de proyectos y demostraciones (front-end, back-end y full stack).</p>
@@ -658,7 +657,6 @@
         </section>
       </article>
 
-      <!-- CONTACTO -->
       <article id="sec-contact" class="section" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
         <h2 class="h2">Contacto</h2>
         <p class="lead">Puedes contactar a través del formulario.</p>
@@ -702,112 +700,84 @@
   <div id="toast" class="toast" role="status" aria-live="polite">¡Mensaje enviado! ✨</div>
 
   <script>
-    /* Tabs principales accesibles */
-    const tabs = document.querySelectorAll('.tab');
-    const panels = document.querySelectorAll('.section');
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      const tabs = document.querySelectorAll('.tab');
+      const panels = document.querySelectorAll('.section');
 
-    function activateTab(button){
-      tabs.forEach(t => {
-        t.setAttribute('aria-selected','false');
-        t.setAttribute('tabindex','-1');
-      });
-      panels.forEach(p => p.setAttribute('aria-hidden','true'));
+      if(tabs.length === 0 || panels.length === 0) {
+        console.error('No se encontraron tabs o panels');
+        return;
+      }
 
-      button.setAttribute('aria-selected','true');
-      button.setAttribute('tabindex','0');
+      function activateTab(button){
+        tabs.forEach(t => {
+          t.setAttribute('aria-selected','false');
+          t.setAttribute('tabindex','-1');
+        });
+        
+        panels.forEach(p => p.setAttribute('aria-hidden','true'));
 
-      const panelId = button.getAttribute('aria-controls');
-      const panel = document.getElementById(panelId);
-      if(panel) panel.setAttribute('aria-hidden','false');
+        button.setAttribute('aria-selected','true');
+        button.setAttribute('tabindex','0');
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+        const panelId = button.getAttribute('aria-controls');
+        const panel = document.getElementById(panelId);
+        if(panel) {
+          panel.setAttribute('aria-hidden','false');
+        } else {
+          console.error('No se encontró el panel:', panelId);
+        }
 
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => activateTab(btn));
-      btn.addEventListener('keydown', (e) => {
-        const list = [...tabs];
-        const i = list.indexOf(btn);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
 
-        if(e.key === 'ArrowRight') { list[(i+1)%list.length].focus(); }
-        if(e.key === 'ArrowLeft')  { list[(i-1+list.length)%list.length].focus(); }
-        if(e.key === 'Home')       { list[0].focus(); }
-        if(e.key === 'End')        { list[list.length-1].focus(); }
-
-        if(e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
+      tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
           activateTab(btn);
-        }
-      });
-    });
+        });
 
-    /* Animación de aparición para tarjetas */
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if(e.isIntersecting){
-          e.target.classList.add('reveal');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: .14 });
+        btn.addEventListener('keydown', (e) => {
+          const list = Array.from(tabs);
+          const i = list.indexOf(btn);
 
-    document.querySelectorAll('.project-card').forEach(c => io.observe(c));
-
-    /* Form: habilitar botón + toast */
-    const form = document.getElementById('contacto');
-    const send = document.getElementById('btnEnviar');
-    const toast = document.getElementById('toast');
-
-    if(form && send){
-      form.addEventListener('input', () => {
-        send.disabled = !form.checkValidity();
-      });
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        send.disabled = true;
-
-        try{
-          const fd = new FormData(form);
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: fd,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if(res.ok){
-            form.reset();
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
-          } else {
-            alert('No se ha podido enviar. Inténtalo de nuevo.');
+          if(e.key === 'ArrowRight') {
+            e.preventDefault();
+            list[(i+1) % list.length].focus();
           }
-        } catch {
-          alert('Error de red. Inténtalo más tarde.');
-        } finally {
-          send.disabled = false;
-        }
+          if(e.key === 'ArrowLeft') {
+            e.preventDefault();
+            list[(i-1 + list.length) % list.length].focus();
+          }
+          if(e.key === 'Home') {
+            e.preventDefault();
+            list[0].focus();
+          }
+          if(e.key === 'End') {
+            e.preventDefault();
+            list[list.length-1].focus();
+          }
+          if(e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            activateTab(btn);
+          }
+        });
       });
-    }
 
-    /* Subtabs de Materiales (Manuales / Ejercicios) */
-    const subtabRoots = [
-      { tabs: '.subnav .subtab', panels: '.subpanel' }
-    ];
-
-    subtabRoots.forEach(cfg => {
-      const subtabs = document.querySelectorAll(cfg.tabs);
-      const subpanels = document.querySelectorAll(cfg.panels);
+      const subtabs = document.querySelectorAll('.subtab');
+      const subpanels = document.querySelectorAll('.subpanel');
 
       function activateSubtab(button){
-        // Solo afecta a los subpanels dentro de la sección "Materiales"
         const materials = document.getElementById('sec-materials');
         if(!materials) return;
 
         const localTabs = materials.querySelectorAll('.subtab');
         const localPanels = materials.querySelectorAll('.subpanel');
 
-        localTabs.forEach(t => { t.setAttribute('aria-selected','false'); t.setAttribute('tabindex','-1'); });
+        localTabs.forEach(t => {
+          t.setAttribute('aria-selected','false');
+          t.setAttribute('tabindex','-1');
+        });
         localPanels.forEach(p => p.setAttribute('aria-hidden','true'));
 
         button.setAttribute('aria-selected','true');
@@ -820,21 +790,82 @@
 
       subtabs.forEach(btn => {
         btn.addEventListener('click', () => activateSubtab(btn));
+        
         btn.addEventListener('keydown', (e) => {
-          const list = [...subtabs];
+          const list = Array.from(subtabs);
           const i = list.indexOf(btn);
 
-          if(e.key === 'ArrowRight') { list[(i+1)%list.length].focus(); }
-          if(e.key === 'ArrowLeft')  { list[(i-1+list.length)%list.length].focus(); }
-          if(e.key === 'Home')       { list[0].focus(); }
-          if(e.key === 'End')        { list[list.length-1].focus(); }
-
+          if(e.key === 'ArrowRight') {
+            e.preventDefault();
+            list[(i+1) % list.length].focus();
+          }
+          if(e.key === 'ArrowLeft') {
+            e.preventDefault();
+            list[(i-1 + list.length) % list.length].focus();
+          }
+          if(e.key === 'Home') {
+            e.preventDefault();
+            list[0].focus();
+          }
+          if(e.key === 'End') {
+            e.preventDefault();
+            list[list.length-1].focus();
+          }
           if(e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             activateSubtab(btn);
           }
         });
       });
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            e.target.classList.add('reveal');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: .14 });
+
+      document.querySelectorAll('.project-card').forEach(c => io.observe(c));
+
+      const form = document.getElementById('contacto');
+      const send = document.getElementById('btnEnviar');
+      const toast = document.getElementById('toast');
+
+      if(form && send){
+        form.addEventListener('input', () => {
+          send.disabled = !form.checkValidity();
+        });
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          send.disabled = true;
+
+          try{
+            const fd = new FormData(form);
+            const res = await fetch(form.action, {
+              method: 'POST',
+              body: fd,
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if(res.ok){
+              form.reset();
+              toast.classList.add('show');
+              setTimeout(() => toast.classList.remove('show'), 3000);
+            } else {
+              alert('No se ha podido enviar. Inténtalo de nuevo.');
+            }
+          } catch(err) {
+            console.error('Error:', err);
+            alert('Error de red. Inténtalo más tarde.');
+          } finally {
+            send.disabled = false;
+          }
+        });
+      }
+
     });
   </script>
 </body>
