@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inma Contreras — Portfolio Docente</title>
-  <meta name="description" content="Portfolio profesional de Inma Contreras, docente TIC especializada en desarrollo web y competencias digitales. Incluye trayectoria, manuales formativos, ejercicios prácticos y proyectos demostrativos." />
+
+  <!-- ✅ Descripción ampliada y más profesional -->
+  <meta
+    name="description"
+    content="Portfolio profesional de Inma Contreras, docente TIC especializada en desarrollo web y competencias digitales. Recoge trayectoria académica y experiencia, junto con una selección de manuales y recursos didácticos, ejercicios prácticos y actividades guiadas para el aprendizaje de tecnologías como HTML, CSS, JavaScript, React, Node.js/Express, SQL y MongoDB. Material orientado a formación, refuerzo y evaluación, con enfoque en buenas prácticas, accesibilidad y metodología aplicada."
+  />
   <meta name="theme-color" content="#1E4AAE" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -272,108 +277,32 @@
     </aside>
 
     <section aria-label="Contenido principal">
-      <!-- ✅ CAMBIO: Tabs principales ahora son Manuales y Ejercicios (en lugar de Materiales/Proyectos) -->
+      <!-- ✅ MENÚ PRINCIPAL: SOLO 2 PESTAÑAS (Manuales / Ejercicios) -->
       <nav class="nav" role="tablist" aria-label="Secciones del portfolio">
-        <button class="tab" role="tab" aria-selected="true"  aria-controls="sec-about"      id="tab-about"      tabindex="0">Sobre mí</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-resume"     id="tab-resume"     tabindex="-1">CV</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-manuales"   id="tab-manuales"   tabindex="-1">Manuales</button>
+        <button class="tab" role="tab" aria-selected="true"  aria-controls="sec-manuales"   id="tab-manuales"   tabindex="0">Manuales</button>
         <button class="tab" role="tab" aria-selected="false" aria-controls="sec-ejercicios" id="tab-ejercicios" tabindex="-1">Ejercicios</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-contact"    id="tab-contact"    tabindex="-1">Contacto</button>
       </nav>
 
-      <!-- ABOUT -->
-      <article id="sec-about" class="section" role="tabpanel" aria-labelledby="tab-about" aria-hidden="false">
+      <!-- MANUALES -->
+      <article id="sec-manuales" class="section" role="tabpanel" aria-labelledby="tab-manuales" aria-hidden="false">
         <div class="logo-hero">
           <img src="logo.png" alt="Logo personal de Inma Contreras" loading="eager" decoding="async">
         </div>
 
-        <section class="intro">
-          <h2 class="h2">Perfil docente TIC</h2>
+        <section class="intro" aria-label="Introducción de manuales">
+          <h2 class="h2">Manuales y recursos didácticos</h2>
           <p>
-            Docente especializada en <strong>desarrollo web</strong> y <strong>competencias digitales</strong>, con experiencia en la
-            planificación de contenidos y la creación de materiales formativos para <strong>HTML, CSS, JavaScript, React</strong>,
-            <strong>Node.js/Express</strong> y <strong>SQL</strong>. Enfoque orientado a la práctica, la evaluación y la mejora continua.
+            Selección de manuales y guías orientadas a la formación en desarrollo web, bases de datos y competencias digitales.
+            Incluyen explicaciones progresivas, ejemplos, buenas prácticas y recursos para el trabajo en el aula y el estudio autónomo.
           </p>
           <p class="small">
-            Áreas: front-end, back-end, bases de datos, buenas prácticas, accesibilidad y despliegue.
+            Tecnologías: HTML, CSS, JavaScript, React, Node.js/Express, SQL y MongoDB · Enfoque: práctica, accesibilidad y despliegue.
           </p>
         </section>
 
         <div class="hero-photo-wrap">
           <img class="hero-photo" src="hero-inma.png" alt="Inma Contreras — Docente TIC" loading="lazy" decoding="async">
         </div>
-      </article>
-
-      <!-- CV -->
-      <article id="sec-resume" class="section" role="tabpanel" aria-labelledby="tab-resume" aria-hidden="true">
-        <h2 class="h2">Formación y trayectoria profesional</h2>
-
-        <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin-bottom:1.5rem;">
-          <figure class="cv-figure">
-            <img src="cvinma.png" alt="Currículum — Inma Contreras" loading="lazy" decoding="async">
-          </figure>
-
-          <a href="icidocentetic.pdf" download class="btn-raise">
-            <ion-icon name="download-outline"></ion-icon>
-            Descargar CV en PDF
-          </a>
-
-          <a href="https://sites.google.com/view/inmacontreras/experiencia-laboral?authuser=0"
-            target="_blank"
-            rel="noreferrer"
-            class="btn-raise">
-            <ion-icon name="open-outline"></ion-icon>
-            Ver CV digital completo
-          </a>
-        </div>
-
-        <div class="grid cols-2">
-          <section>
-            <h3 class="h3">Educación</h3>
-            <ol class="timeline">
-              <li class="tl-item">
-                <div class="tl-title">Grado Superior de Desarrollo de Aplicaciones Multiplataforma (DAM)</div>
-                <div class="tl-meta">Salesianas Nervión · 2023–2025</div>
-                <p class="small">Bases de datos, Android, programación. <strong>Nota media: 8,67</strong>.</p>
-              </li>
-              <li class="tl-item">
-                <div class="tl-title">Licenciatura en Derecho</div>
-                <div class="tl-meta">Universidad de Sevilla · 1995–2000</div>
-                <p class="small">Especialidad en Empresa.</p>
-              </li>
-              <li class="tl-item">
-                <div class="tl-title">MAES — Profesorado de Secundaria, FP e Idiomas</div>
-                <div class="tl-meta">VIU · 2015</div>
-              </li>
-              <li class="tl-item">
-                <div class="tl-title">Formación complementaria: igualdad y teleformación</div>
-                <div class="tl-meta">2025</div>
-              </li>
-            </ol>
-          </section>
-
-          <section>
-            <h3 class="h3">Experiencia</h3>
-            <ol class="timeline">
-              <li class="tl-item">
-                <div class="tl-title">Docente de Desarrollo Web</div>
-                <div class="tl-meta">Septiembre 2025 — Presente</div>
-                <p class="small">Diseño de materiales, actividades prácticas y evaluación.</p>
-              </li>
-              <li class="tl-item">
-                <div class="tl-title">BBVA — Gestora Comercial</div>
-                <div class="tl-meta">1999 — 2021</div>
-                <p class="small">Gestión de clientes, objetivos y trabajo en equipo.</p>
-              </li>
-            </ol>
-          </section>
-        </div>
-      </article>
-
-      <!-- MANUALES -->
-      <article id="sec-manuales" class="section" role="tabpanel" aria-labelledby="tab-manuales" aria-hidden="true">
-        <h2 class="h2">Manuales</h2>
-        <p class="lead">Guías y materiales de apoyo para formación en desarrollo web y bases de datos.</p>
 
         <section class="projects-static" aria-label="Listado de manuales">
           <article class="project-card">
@@ -478,7 +407,7 @@
             </a>
             <div class="project-body">
               <h3 class="project-title">Entorno servidor con Node.js
-                <span class="badge"><ion-icon name="hardware-chip-outline"></ion-icon> Backend</span>
+                <span class="badge"><ion-icon name="hardware-chip-outline"></ion-icon> Guía</span>
               </h3>
               <p class="project-desc">Material de apoyo sobre configuración, rutas y fundamentos con Node.js/Express.</p>
               <div class="project-links">
@@ -557,34 +486,9 @@
             </div>
           </article>
         </section>
-      </article>
 
-      <!-- CONTACTO -->
-      <article id="sec-contact" class="section" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
-        <h2 class="h2">Contacto</h2>
-        <p class="lead">Puedes contactar a través del formulario.</p>
-
-        <form id="contacto" class="contact-card" action="https://formspree.io/f/xbjwqkvp" method="POST" novalidate>
-          <div class="contact-grid">
-            <label>
-              <span class="small">Nombre</span>
-              <input class="input" name="name" required placeholder="Tu nombre" aria-required="true">
-            </label>
-            <label>
-              <span class="small">Email</span>
-              <input class="input" name="email" type="email" required placeholder="tu@email.com" aria-required="true">
-            </label>
-          </div>
-          <label>
-            <span class="small">Mensaje</span>
-            <textarea class="input textarea" name="message" required placeholder="Escribe tu mensaje..."></textarea>
-          </label>
-          <button id="btnEnviar" class="btn" disabled>
-            <ion-icon name="paper-plane"></ion-icon> Enviar
-          </button>
-        </form>
-
-        <div class="tarjeta-personal">
+        <!-- ✅ Mantengo tu tarjeta personal dentro de Ejercicios para que no se pierda -->
+        <div class="tarjeta-personal" style="margin-top: 1.25rem;">
           <figure class="tarjeta-foto">
             <img src="tarjetainma.png" alt="Inma Contreras — Docente TIC" loading="lazy" decoding="async">
           </figure>
@@ -606,6 +510,8 @@
     document.addEventListener('DOMContentLoaded', function() {
       const tabs = document.querySelectorAll('.tab');
       const panels = document.querySelectorAll('.section');
+
+      if(tabs.length === 0 || panels.length === 0) return;
 
       function activateTab(button){
         tabs.forEach(t => {
@@ -642,6 +548,7 @@
         });
       });
 
+      // Animación reveal
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {
           if(e.isIntersecting){
@@ -651,43 +558,6 @@
         });
       }, { threshold: .14 });
       document.querySelectorAll('.project-card').forEach(c => io.observe(c));
-
-      const form = document.getElementById('contacto');
-      const send = document.getElementById('btnEnviar');
-      const toast = document.getElementById('toast');
-
-      if(form && send){
-        form.addEventListener('input', () => {
-          send.disabled = !form.checkValidity();
-        });
-
-        form.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          send.disabled = true;
-
-          try{
-            const fd = new FormData(form);
-            const res = await fetch(form.action, {
-              method: 'POST',
-              body: fd,
-              headers: { 'Accept': 'application/json' }
-            });
-
-            if(res.ok){
-              form.reset();
-              toast.classList.add('show');
-              setTimeout(() => toast.classList.remove('show'), 3000);
-            } else {
-              alert('No se ha podido enviar. Inténtalo de nuevo.');
-            }
-          } catch(err){
-            console.error('Error:', err);
-            alert('Error de red. Inténtalo más tarde.');
-          } finally {
-            send.disabled = false;
-          }
-        });
-      }
     });
   </script>
 </body>
