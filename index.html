@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inma Contreras — Portfolio Docente</title>
-  <meta name="description" content="Portfolio profesional de Inma Contreras, docente TIC especializada en desarrollo web. Incluye trayectoria, materiales formativos (manuales y ejercicios) y proyectos[...]
+  <meta name="description" content="Portfolio profesional de Inma Contreras, docente TIC especializada en desarrollo web y competencias digitales. Incluye trayectoria, manuales formativos, ejercicios prácticos y proyectos demostrativos." />
   <meta name="theme-color" content="#1E4AAE" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -61,13 +62,10 @@
     nav.nav{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);
       border:1px solid var(--color-border);border-radius:16px;padding:6px;display:flex;gap:6px;flex-wrap:wrap;z-index:5}
     .tab{padding:.65rem .9rem;border-radius:12px;color:var(--color-muted);
-      border:1px solid transparent;
-      background:transparent;
+      border:1px solid transparent;background:transparent;
       transition:background .2s ease, transform .2s ease, border-color .2s ease}
     .tab[aria-selected="true"], .tab:hover{
-      background:#fff;
-      color:var(--color-ink);
-      border-color:var(--color-border);
+      background:#fff;color:var(--color-ink);border-color:var(--color-border);
       box-shadow:0 6px 18px rgba(30,74,174,.08)}
     .tab:active{transform:scale(.98)}
     .section{display:none;padding:24px}
@@ -87,10 +85,18 @@
     @media (min-width:720px){ .projects-static{ grid-template-columns:repeat(2,1fr) } }
     @media (min-width:1024px){ .projects-static{ grid-template-columns:repeat(3,1fr) } }
 
-    .project-card{background:linear-gradient(180deg,#fff 0%,#fff7fa 100%);
-      border:1px solid var(--color-border);border-radius:18px;box-shadow:0 14px 40px rgba(30,74,174,.10);
-      overflow:hidden;display:flex;flex-direction:column;transform:translateY(6px);opacity:0;
-      transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease, opacity .6s ease}
+    .project-card{
+      background:linear-gradient(180deg,#fff 0%,#fff7fa 100%);
+      border:1px solid var(--color-border);
+      border-radius:18px;
+      box-shadow:0 14px 40px rgba(30,74,174,.10);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transform:translateY(6px);
+      opacity:0;
+      transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease, opacity .6s ease
+    }
     .project-card.reveal{transform:translateY(0);opacity:1}
     .project-card:hover{box-shadow:0 18px 48px rgba(30,74,174,.16);transform:translateY(-3px)}
 
@@ -101,16 +107,40 @@
     .project-desc{margin:0;font-size:.92rem;color:var(--color-muted)}
     .badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;padding:.25rem .55rem;border-radius:999px;background:#f0f6ff;color:#1e40af;border:1px solid #e6efff}
     .project-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:.35rem}
-    .btn-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .7rem;border-radius:999px;font-size:.85rem;background:#fff;border:1px solid var(--color-border);box-shadow:0 6px 16px rgba(236,72,153,.08);transition:box-shadow .2s ease}
+    .btn-chip{
+      display:inline-flex;align-items:center;gap:.4rem;
+      padding:.45rem .7rem;border-radius:999px;
+      font-size:.85rem;background:#fff;border:1px solid var(--color-border);
+      box-shadow:0 6px 16px rgba(236,72,153,.08);
+      transition:box-shadow .2s ease
+    }
     .btn-chip:hover{box-shadow:0 8px 18px rgba(236,72,153,.15)}
     .btn-chip ion-icon{font-size:1rem;color:#ec4899}
 
-    .logo-hero{display:flex;justify-content:center;align-items:center;margin-bottom:1.5rem;background:linear-gradient(135deg,#f9d6e2 0%,#e0ecff 100%);padding:1.5rem;border-radius:20px;box-shadow:0 8px 24px rgba(30,74,174,.1)}
-    .logo-hero img{width:280px;height:auto;border-radius:16px;background:#fff;padding:10px 20px;box-shadow:0 6px 18px rgba(30,74,174,.15);animation:float 5s ease-in-out infinite}
+    .logo-hero{
+      display:flex;justify-content:center;align-items:center;margin-bottom:1.5rem;
+      background:linear-gradient(135deg,#f9d6e2 0%,#e0ecff 100%);
+      padding:1.5rem;border-radius:20px;
+      box-shadow:0 8px 24px rgba(30,74,174,.1)
+    }
+    .logo-hero img{
+      width:280px;height:auto;border-radius:16px;background:#fff;
+      padding:10px 20px;
+      box-shadow:0 6px 18px rgba(30,74,174,.15);
+      animation:float 5s ease-in-out infinite
+    }
     @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
 
-    .hero-photo-wrap{display:flex;justify-content:center;align-items:center;margin-top:2rem;padding:1.5rem;background:linear-gradient(135deg,#e0ecff 0%,#fde8ef 100%);border-radius:24px;box-shadow:0 8px 24px rgba(30,74,174,.1)}
-    .hero-photo{width:70%;max-width:700px;height:auto;border-radius:18px;background:#fff;padding:8px;box-shadow:0 6px 20px rgba(30,74,174,.15);object-fit:cover}
+    .hero-photo-wrap{
+      display:flex;justify-content:center;align-items:center;margin-top:2rem;
+      padding:1.5rem;background:linear-gradient(135deg,#e0ecff 0%,#fde8ef 100%);
+      border-radius:24px;box-shadow:0 8px 24px rgba(30,74,174,.1)
+    }
+    .hero-photo{
+      width:70%;max-width:700px;height:auto;border-radius:18px;background:#fff;
+      padding:8px;box-shadow:0 6px 20px rgba(30,74,174,.15);
+      object-fit:cover
+    }
 
     .contact-card{background:#fff;border:1px solid var(--color-border);border-radius:18px;box-shadow:var(--shadow-1);padding:16px}
     .contact-grid{display:grid;gap:12px}
@@ -125,9 +155,7 @@
     .skip:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;z-index:999;background:#111;color:#fff;padding:.5rem .75rem;border-radius:10px}
 
     .cv-figure{
-      max-width: 860px;
-      border-radius: 22px;
-      overflow: hidden;
+      max-width: 860px;border-radius: 22px;overflow: hidden;
       border: 1px solid var(--color-border);
       box-shadow: 0 12px 30px rgba(30,74,174,.12);
     }
@@ -142,10 +170,7 @@
       transition: transform .15s ease, box-shadow .2s ease;
     }
     .btn-raise ion-icon{ color: var(--color-primary); }
-    .btn-raise:hover{
-      transform: translateY(-1px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 14px 30px rgba(30,74,174,.16);
-    }
+    .btn-raise:hover{ transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 14px 30px rgba(30,74,174,.16); }
     .btn-raise:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
 
     .tarjeta-personal{
@@ -163,16 +188,9 @@
       box-shadow: 0 12px 28px rgba(30,74,174,.12);
       transition: transform .25s ease, box-shadow .25s ease;
     }
-    .tarjeta-personal:hover{
-      transform: translateY(-3px);
-      box-shadow: 0 16px 38px rgba(30,74,174,.18);
-    }
+    .tarjeta-personal:hover{ transform: translateY(-3px); box-shadow: 0 16px 38px rgba(30,74,174,.18); }
     .tarjeta-foto{
-      flex-shrink: 0;
-      width: 120px;
-      height: 120px;
-      border-radius: 18px;
-      overflow: hidden;
+      flex-shrink: 0;width: 120px;height: 120px;border-radius: 18px;overflow: hidden;
       border: 2px solid var(--color-primary);
       box-shadow: 0 4px 14px rgba(30,74,174,.2);
     }
@@ -189,42 +207,15 @@
     }
     .tarjeta-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(30,74,174,.3); }
 
+    @media (max-width: 700px){
+      .tarjeta-personal{ flex-direction: column; text-align: center; padding: 1.25rem; }
+      .tarjeta-foto{ width: 150px; height: 150px; }
+    }
+
     @media (prefers-reduced-motion: reduce){
       *{scroll-behavior:auto !important}
       .project-card, .logo-hero img{animation:none !important; transition:none !important}
     }
-
-    .subnav{
-      position: sticky;
-      top: 64px;
-      background: rgba(255,255,255,.75);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--color-border);
-      border-radius: 16px;
-      padding: 6px;
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      z-index: 4;
-      margin: 12px 0 18px;
-    }
-    .subtab{
-      padding: .55rem .85rem;
-      border-radius: 12px;
-      color: var(--color-muted);
-      border: 1px solid transparent;
-      background: transparent;
-      transition: background .2s ease, transform .2s ease, border-color .2s ease;
-    }
-    .subtab[aria-selected="true"], .subtab:hover{
-      background: #fff;
-      color: var(--color-ink);
-      border-color: var(--color-border);
-      box-shadow: 0 6px 18px rgba(30,74,174,.08);
-    }
-    .subtab:active{ transform: scale(.98); }
-    .subpanel{ display:none; }
-    .subpanel[aria-hidden="false"]{ display:block; }
   </style>
 </head>
 
@@ -281,14 +272,16 @@
     </aside>
 
     <section aria-label="Contenido principal">
+      <!-- ✅ CAMBIO: Tabs principales ahora son Manuales y Ejercicios (en lugar de Materiales/Proyectos) -->
       <nav class="nav" role="tablist" aria-label="Secciones del portfolio">
-        <button class="tab" role="tab" aria-selected="true" aria-controls="sec-about" id="tab-about" tabindex="0">Sobre mí</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-resume" id="tab-resume" tabindex="-1">CV</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-materials" id="tab-materials" tabindex="-1">Materiales</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-portfolio" id="tab-portfolio" tabindex="-1">Proyectos</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-contact" id="tab-contact" tabindex="-1">Contacto</button>
+        <button class="tab" role="tab" aria-selected="true"  aria-controls="sec-about"      id="tab-about"      tabindex="0">Sobre mí</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-resume"     id="tab-resume"     tabindex="-1">CV</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-manuales"   id="tab-manuales"   tabindex="-1">Manuales</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-ejercicios" id="tab-ejercicios" tabindex="-1">Ejercicios</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="sec-contact"    id="tab-contact"    tabindex="-1">Contacto</button>
       </nav>
 
+      <!-- ABOUT -->
       <article id="sec-about" class="section" role="tabpanel" aria-labelledby="tab-about" aria-hidden="false">
         <div class="logo-hero">
           <img src="logo.png" alt="Logo personal de Inma Contreras" loading="eager" decoding="async">
@@ -297,11 +290,10 @@
         <section class="intro">
           <h2 class="h2">Perfil docente TIC</h2>
           <p>
-            Docente especializada en <strong>desarrollo web</strong> y <strong>competencias digitales</strong>, con experiencia en
-            la planificación de contenidos y la creación de materiales formativos para <strong>HTML, CSS, JavaScript, React</strong>,
+            Docente especializada en <strong>desarrollo web</strong> y <strong>competencias digitales</strong>, con experiencia en la
+            planificación de contenidos y la creación de materiales formativos para <strong>HTML, CSS, JavaScript, React</strong>,
             <strong>Node.js/Express</strong> y <strong>SQL</strong>. Enfoque orientado a la práctica, la evaluación y la mejora continua.
           </p>
-
           <p class="small">
             Áreas: front-end, back-end, bases de datos, buenas prácticas, accesibilidad y despliegue.
           </p>
@@ -312,8 +304,9 @@
         </div>
       </article>
 
+      <!-- CV -->
       <article id="sec-resume" class="section" role="tabpanel" aria-labelledby="tab-resume" aria-hidden="true">
-        <h2 class="h2">Formación y Trayectoria Profesional</h2>
+        <h2 class="h2">Formación y trayectoria profesional</h2>
 
         <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin-bottom:1.5rem;">
           <figure class="cv-figure">
@@ -377,264 +370,104 @@
         </div>
       </article>
 
-      <article id="sec-materials" class="section" role="tabpanel" aria-labelledby="tab-materials" aria-hidden="true">
-        <h2 class="h2">Materiales</h2>
-        <p class="lead">Manuales y ejercicios para formación en desarrollo web y bases de datos.</p>
+      <!-- MANUALES -->
+      <article id="sec-manuales" class="section" role="tabpanel" aria-labelledby="tab-manuales" aria-hidden="true">
+        <h2 class="h2">Manuales</h2>
+        <p class="lead">Guías y materiales de apoyo para formación en desarrollo web y bases de datos.</p>
 
-        <nav class="subnav" role="tablist" aria-label="Materiales: Manuales y Ejercicios">
-          <button class="subtab" role="tab" aria-selected="true" aria-controls="mat-manuales" id="mat-tab-manuales" tabindex="0">
-            Manuales
-          </button>
-          <button class="subtab" role="tab" aria-selected="false" aria-controls="mat-ejercicios" id="mat-tab-ejercicios" tabindex="-1">
-            Ejercicios
-          </button>
-        </nav>
-
-        <section id="mat-manuales" class="subpanel" role="tabpanel" aria-labelledby="mat-tab-manuales" aria-hidden="false">
-          <section class="projects-static" aria-label="Manuales">
-            <article class="project-card">
-              <a class="project-media" href="https://cursohtml1841.vercel.app/" target="_blank" rel="noreferrer">
-                <img src="html.png" alt="Manual completo de HTML — portada" loading="lazy" decoding="async">
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Manual completo de HTML
-                  <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
-                </h3>
-                <p class="project-desc">Guía progresiva de HTML con ejemplos y actividades de refuerzo.</p>
-                <div class="project-links">
-                  <a class="btn-chip" href="https://cursohtml1841.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
-                  <a class="btn-chip" href="https://github.com/inma2709/cursohtml/tree/main/html1841" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="project-media" href="https://sql-gules-seven.vercel.app/" target="_blank" rel="noreferrer">
-                <img src="sql.png" alt="Manual de SQL — portada" loading="lazy" decoding="async">
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Manual de SQL
-                  <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
-                </h3>
-                <p class="project-desc">Conceptos, consultas y ejemplos prácticos orientados a bases de datos relacionales.</p>
-                <div class="project-links">
-                  <a class="btn-chip" href="https://sql-gules-seven.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
-                  <a class="btn-chip" href="https://github.com/inma2709/sql" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="project-media" href="https://mongoo-manual.vercel.app/" target="_blank" rel="noreferrer">
-                <img src="mongodb.png" alt="Manual de MongoDB — portada" loading="lazy" decoding="async">
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Manual de MongoDB
-                  <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
-                </h3>
-                <p class="project-desc">Introducción práctica a MongoDB: operaciones básicas, modelado y ejemplos.</p>
-                <div class="project-links">
-                  <a class="btn-chip" href="https://mongoo-manual.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
-                  <a class="btn-chip" href="https://github.com/inma2709/MongooManual" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="project-media" href="https://uf1843uxyaccesibilidad.vercel.app/" target="_blank" rel="noreferrer">
-                <img src="accesibilidad-ux.png" alt="Usabilidad y Accesibilidad Web — UF1843" loading="lazy" decoding="async">
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Usabilidad y Accesibilidad Web
-                  <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
-                </h3>
-                <p class="project-desc">Buenas prácticas de accesibilidad, estándares y criterios de diseño inclusivo.</p>
-                <div class="project-links">
-                  <a class="btn-chip" href="https://uf1843uxyaccesibilidad.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
-                  <a class="btn-chip" href="https://github.com/inma2709/uf1843uxyaccesibilidad" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="project-media" href="https://nomenclatura-ivory.vercel.app/" target="_blank" rel="noreferrer">
-                <img src="nomenclatura.png" alt="Nomenclatura de archivos y carpetas — portada" loading="lazy" decoding="async">
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Nomenclatura de archivos y carpetas
-                  <span class="badge"><ion-icon name="document-text-outline"></ion-icon> Guía</span>
-                </h3>
-                <p class="project-desc">Criterios y ejemplos para mantener proyectos organizados y mantenibles.</p>
-                <div class="project-links">
-                  <a class="btn-chip" href="https://nomenclatura-ivory.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
-                  <a class="btn-chip" href="https://github.com/inma2709/nomenclatura" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="project-media" href="https://despliegue-ten-pink.vercel.app/" target="_blank" rel="noreferrer">
-                <img src="despliegue.png" alt="Despliegue de aplicaciones web — portada" loading="lazy" decoding="async">
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Despliegue de aplicaciones web
-                  <span class="badge"><ion-icon name="document-text-outline"></ion-icon> Guía</span>
-                </h3>
-                <p class="project-desc">Publicación de proyectos con Git y plataformas de despliegue en entornos educativos.</p>
-                <div class="project-links">
-                  <a class="btn-chip" href="https://despliegue-ten-pink.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
-                  <a class="btn-chip" href="https://github.com/inma2709/despliegue" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                </div>
-              </div>
-            </article>
-          </section>
-        </section>
-
-        <section id="mat-ejercicios" class="subpanel" role="tabpanel" aria-labelledby="mat-tab-ejercicios" aria-hidden="true">
-          <section class="projects-static" aria-label="Ejercicios">
-            <article class="project-card">
-              <a class="project-media" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer">
-                <img src="js.png" alt="Ahora JavaScript — ejercicios" loading="lazy" decoding="async">
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Ahora JavaScript
-                  <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicios</span>
-                </h3>
-                <p class="project-desc">Banco de ejercicios para practicar fundamentos, funciones, arrays y DOM.</p>
-                <div class="project-links">
-                  <a class="btn-chip" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
-                  <a class="btn-chip" href="https://github.com/inma2709/javascript" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="project-media" href="https://github.com/inma2709/ejercicioSenderos" target="_blank" rel="noreferrer">
-                <img src="senderos.png" alt="Senderos — ejercicio backend" loading="lazy" decoding="async">
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Senderos
-                  <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicio</span>
-                </h3>
-                <p class="project-desc">Práctica de Node/Express con persistencia en JSON y rutas básicas.</p>
-                <div class="project-links">
-                  <a class="btn-chip" href="https://github.com/inma2709/ejercicioSenderos" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="project-media" href="https://github.com/inma2709/ejercicioMongoo" target="_blank" rel="noreferrer">
-                <img src="ejercicio-mongodb.png" alt="Ejercicio MongoDB — full stack" loading="lazy" decoding="async">
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Ejercicio MongoDB
-                  <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicio</span>
-                </h3>
-                <p class="project-desc">Ejercicio full stack con CRUD y persistencia en MongoDB.</p>
-                <div class="project-links">
-                  <a class="btn-chip" href="https://github.com/inma2709/ejercicioMongoo" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="project-media" href="https://github.com/inma2709/crudCanciones" target="_blank" rel="noreferrer">
-                <img src="crud-canciones.png" alt="CRUD Canciones — full stack" loading="lazy" decoding="async">
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">CRUD Canciones
-                  <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicio</span>
-                </h3>
-                <p class="project-desc">Aplicación de práctica para CRUD con Node/Express y almacenamiento en JSON.</p>
-                <div class="project-links">
-                  <a class="btn-chip" href="https://github.com/inma2709/crudCanciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                </div>
-              </div>
-            </article>
-          </section>
-        </section>
-      </article>
-
-      <article id="sec-portfolio" class="section" role="tabpanel" aria-labelledby="tab-portfolio" aria-hidden="true">
-        <h2 class="h2">Proyectos</h2>
-        <p class="lead">Selección de proyectos y demostraciones (front-end, back-end y full stack).</p>
-
-        <section class="projects-static" aria-label="Listado de proyectos">
+        <section class="projects-static" aria-label="Listado de manuales">
           <article class="project-card">
-            <a class="project-media" href="https://bootstrapyanimaciones.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="boot.png" alt="Lecciones para clase: HTML, CSS y Bootstrap — portada" loading="lazy" decoding="async">
+            <a class="project-media" href="https://cursohtml1841.vercel.app/" target="_blank" rel="noreferrer">
+              <img src="html.png" alt="Manual completo de HTML — portada" loading="lazy" decoding="async">
             </a>
             <div class="project-body">
-              <h3 class="project-title">Lecciones para clase: HTML &amp; CSS + Bootstrap
-                <span class="badge"><ion-icon name="rocket-outline"></ion-icon> Demo</span>
+              <h3 class="project-title">Manual completo de HTML
+                <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
               </h3>
-              <p class="project-desc">Material de apoyo y demostraciones para maquetación y Bootstrap.</p>
+              <p class="project-desc">Guía progresiva de HTML con ejemplos y actividades de refuerzo.</p>
               <div class="project-links">
-                <a class="btn-chip" href="https://bootstrapyanimaciones.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
-                <a class="btn-chip" href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+                <a class="btn-chip" href="https://cursohtml1841.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
+                <a class="btn-chip" href="https://github.com/inma2709/cursohtml/tree/main/html1841" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
 
           <article class="project-card">
-            <a class="project-media" href="https://react-lac-beta-68.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="react2.png" alt="React — componentes básicos — portada" loading="lazy" decoding="async">
+            <a class="project-media" href="https://sql-gules-seven.vercel.app/" target="_blank" rel="noreferrer">
+              <img src="sql.png" alt="Manual de SQL — portada" loading="lazy" decoding="async">
             </a>
             <div class="project-body">
-              <h3 class="project-title">React — Componentes básicos
-                <span class="badge"><ion-icon name="rocket-outline"></ion-icon> Demo</span>
+              <h3 class="project-title">Manual de SQL
+                <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
               </h3>
-              <p class="project-desc">Componentes, estado y rutas con Vite para prácticas guiadas.</p>
+              <p class="project-desc">Conceptos, consultas y ejemplos prácticos orientados a bases de datos relacionales.</p>
               <div class="project-links">
-                <a class="btn-chip" href="https://react-lac-beta-68.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
-                <a class="btn-chip" href="https://github.com/inma2709/react" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+                <a class="btn-chip" href="https://sql-gules-seven.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
+                <a class="btn-chip" href="https://github.com/inma2709/sql" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
 
           <article class="project-card">
-            <a class="project-media" href="https://github.com/inma2709/bazarCompleto" target="_blank" rel="noreferrer">
-              <img src="bazar-fullstack.png" alt="Bazar Full Stack — backend y frontend" loading="lazy" decoding="async">
+            <a class="project-media" href="https://mongoo-manual.vercel.app/" target="_blank" rel="noreferrer">
+              <img src="mongodb.png" alt="Manual de MongoDB — portada" loading="lazy" decoding="async">
             </a>
             <div class="project-body">
-              <h3 class="project-title">Bazar Full Stack
-                <span class="badge"><ion-icon name="layers-outline"></ion-icon> Full Stack</span>
+              <h3 class="project-title">Manual de MongoDB
+                <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
               </h3>
-              <p class="project-desc">Proyecto full stack con Node/Express, SQL y frontends en React y HTML/CSS.</p>
+              <p class="project-desc">Introducción práctica a MongoDB: operaciones básicas, modelado y ejemplos.</p>
               <div class="project-links">
-                <a class="btn-chip" href="https://github.com/inma2709/bazarCompleto" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+                <a class="btn-chip" href="https://mongoo-manual.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
+                <a class="btn-chip" href="https://github.com/inma2709/MongooManual" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
 
           <article class="project-card">
-            <a class="project-media" href="https://giphy-one-alpha.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="giphy-api.png" alt="Consumo de API externa con GIPHY — aplicación web" loading="lazy" decoding="async">
+            <a class="project-media" href="https://uf1843uxyaccesibilidad.vercel.app/" target="_blank" rel="noreferrer">
+              <img src="accesibilidad-ux.png" alt="Usabilidad y Accesibilidad Web — UF1843" loading="lazy" decoding="async">
             </a>
             <div class="project-body">
-              <h3 class="project-title">Consumo de API externa (GIPHY)
-                <span class="badge"><ion-icon name="swap-horizontal-outline"></ion-icon> API</span>
+              <h3 class="project-title">Usabilidad y Accesibilidad Web
+                <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
               </h3>
-              <p class="project-desc">Demo de consumo de API pública con fetch y async/await.</p>
+              <p class="project-desc">Buenas prácticas de accesibilidad, estándares y criterios de diseño inclusivo.</p>
               <div class="project-links">
-                <a class="btn-chip" href="https://giphy-one-alpha.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
-                <a class="btn-chip" href="https://github.com/inma2709/giphy" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+                <a class="btn-chip" href="https://uf1843uxyaccesibilidad.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
+                <a class="btn-chip" href="https://github.com/inma2709/uf1843uxyaccesibilidad" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
 
           <article class="project-card">
-            <a class="project-media" href="https://repasodiciembre.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="repaso.png" alt="Repaso con cursos online y ejercicios" loading="lazy" decoding="async">
+            <a class="project-media" href="https://nomenclatura-ivory.vercel.app/" target="_blank" rel="noreferrer">
+              <img src="nomenclatura.png" alt="Nomenclatura de archivos y carpetas — portada" loading="lazy" decoding="async">
             </a>
             <div class="project-body">
-              <h3 class="project-title">Recursos de repaso
-                <span class="badge"><ion-icon name="library-outline"></ion-icon> Recursos</span>
+              <h3 class="project-title">Nomenclatura de archivos y carpetas
+                <span class="badge"><ion-icon name="document-text-outline"></ion-icon> Guía</span>
               </h3>
-              <p class="project-desc">Recopilación de recursos y contenidos de refuerzo para el alumnado.</p>
+              <p class="project-desc">Criterios y ejemplos para mantener proyectos organizados y mantenibles.</p>
               <div class="project-links">
-                <a class="btn-chip" href="https://repasodiciembre.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
+                <a class="btn-chip" href="https://nomenclatura-ivory.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
+                <a class="btn-chip" href="https://github.com/inma2709/nomenclatura" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a class="project-media" href="https://despliegue-ten-pink.vercel.app/" target="_blank" rel="noreferrer">
+              <img src="despliegue.png" alt="Despliegue de aplicaciones web — portada" loading="lazy" decoding="async">
+            </a>
+            <div class="project-body">
+              <h3 class="project-title">Despliegue de aplicaciones web
+                <span class="badge"><ion-icon name="document-text-outline"></ion-icon> Guía</span>
+              </h3>
+              <p class="project-desc">Publicación de proyectos con Git y plataformas de despliegue en entornos educativos.</p>
+              <div class="project-links">
+                <a class="btn-chip" href="https://despliegue-ten-pink.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
+                <a class="btn-chip" href="https://github.com/inma2709/despliegue" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
               </div>
             </div>
           </article>
@@ -647,7 +480,7 @@
               <h3 class="project-title">Entorno servidor con Node.js
                 <span class="badge"><ion-icon name="hardware-chip-outline"></ion-icon> Backend</span>
               </h3>
-              <p class="project-desc">Demostración de configuración, rutas y fundamentos con Node.js/Express.</p>
+              <p class="project-desc">Material de apoyo sobre configuración, rutas y fundamentos con Node.js/Express.</p>
               <div class="project-links">
                 <a class="btn-chip" href="https://entorno-servidor-71vh.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
                 <a class="btn-chip" href="https://github.com/inma2709/entornoServidor" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
@@ -657,6 +490,76 @@
         </section>
       </article>
 
+      <!-- EJERCICIOS -->
+      <article id="sec-ejercicios" class="section" role="tabpanel" aria-labelledby="tab-ejercicios" aria-hidden="true">
+        <h2 class="h2">Ejercicios</h2>
+        <p class="lead">Actividades prácticas para reforzar conceptos de programación, front-end y back-end.</p>
+
+        <section class="projects-static" aria-label="Listado de ejercicios">
+          <article class="project-card">
+            <a class="project-media" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer">
+              <img src="js.png" alt="Ahora JavaScript — ejercicios" loading="lazy" decoding="async">
+            </a>
+            <div class="project-body">
+              <h3 class="project-title">Ahora JavaScript
+                <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicios</span>
+              </h3>
+              <p class="project-desc">Banco de ejercicios para practicar fundamentos, funciones, arrays y DOM.</p>
+              <div class="project-links">
+                <a class="btn-chip" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web</a>
+                <a class="btn-chip" href="https://github.com/inma2709/javascript" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a class="project-media" href="https://github.com/inma2709/ejercicioSenderos" target="_blank" rel="noreferrer">
+              <img src="senderos.png" alt="Senderos — ejercicio backend" loading="lazy" decoding="async">
+            </a>
+            <div class="project-body">
+              <h3 class="project-title">Senderos
+                <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicio</span>
+              </h3>
+              <p class="project-desc">Práctica de Node/Express con persistencia en JSON y rutas básicas.</p>
+              <div class="project-links">
+                <a class="btn-chip" href="https://github.com/inma2709/ejercicioSenderos" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a class="project-media" href="https://github.com/inma2709/ejercicioMongoo" target="_blank" rel="noreferrer">
+              <img src="ejercicio-mongodb.png" alt="Ejercicio MongoDB — full stack" loading="lazy" decoding="async">
+            </a>
+            <div class="project-body">
+              <h3 class="project-title">Ejercicio MongoDB
+                <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicio</span>
+              </h3>
+              <p class="project-desc">Ejercicio full stack con CRUD y persistencia en MongoDB.</p>
+              <div class="project-links">
+                <a class="btn-chip" href="https://github.com/inma2709/ejercicioMongoo" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a class="project-media" href="https://github.com/inma2709/crudCanciones" target="_blank" rel="noreferrer">
+              <img src="crud-canciones.png" alt="CRUD Canciones — full stack" loading="lazy" decoding="async">
+            </a>
+            <div class="project-body">
+              <h3 class="project-title">CRUD Canciones
+                <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicio</span>
+              </h3>
+              <p class="project-desc">Aplicación de práctica para CRUD con Node/Express y almacenamiento en JSON.</p>
+              <div class="project-links">
+                <a class="btn-chip" href="https://github.com/inma2709/crudCanciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+              </div>
+            </div>
+          </article>
+        </section>
+      </article>
+
+      <!-- CONTACTO -->
       <article id="sec-contact" class="section" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
         <h2 class="h2">Contacto</h2>
         <p class="lead">Puedes contactar a través del formulario.</p>
@@ -701,21 +604,14 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      
       const tabs = document.querySelectorAll('.tab');
       const panels = document.querySelectorAll('.section');
-
-      if(tabs.length === 0 || panels.length === 0) {
-        console.error('No se encontraron tabs o panels');
-        return;
-      }
 
       function activateTab(button){
         tabs.forEach(t => {
           t.setAttribute('aria-selected','false');
           t.setAttribute('tabindex','-1');
         });
-        
         panels.forEach(p => p.setAttribute('aria-hidden','true'));
 
         button.setAttribute('aria-selected','true');
@@ -723,97 +619,25 @@
 
         const panelId = button.getAttribute('aria-controls');
         const panel = document.getElementById(panelId);
-        if(panel) {
-          panel.setAttribute('aria-hidden','false');
-        } else {
-          console.error('No se encontró el panel:', panelId);
-        }
+        if(panel) panel.setAttribute('aria-hidden','false');
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
       tabs.forEach(btn => {
-        btn.addEventListener('click', () => {
-          activateTab(btn);
-        });
-
+        btn.addEventListener('click', () => activateTab(btn));
         btn.addEventListener('keydown', (e) => {
           const list = Array.from(tabs);
           const i = list.indexOf(btn);
 
-          if(e.key === 'ArrowRight') {
-            e.preventDefault();
-            list[(i+1) % list.length].focus();
-          }
-          if(e.key === 'ArrowLeft') {
-            e.preventDefault();
-            list[(i-1 + list.length) % list.length].focus();
-          }
-          if(e.key === 'Home') {
-            e.preventDefault();
-            list[0].focus();
-          }
-          if(e.key === 'End') {
-            e.preventDefault();
-            list[list.length-1].focus();
-          }
-          if(e.key === 'Enter' || e.key === ' ') {
+          if(e.key === 'ArrowRight'){ e.preventDefault(); list[(i+1) % list.length].focus(); }
+          if(e.key === 'ArrowLeft'){  e.preventDefault(); list[(i-1 + list.length) % list.length].focus(); }
+          if(e.key === 'Home'){       e.preventDefault(); list[0].focus(); }
+          if(e.key === 'End'){        e.preventDefault(); list[list.length-1].focus(); }
+
+          if(e.key === 'Enter' || e.key === ' '){
             e.preventDefault();
             activateTab(btn);
-          }
-        });
-      });
-
-      const subtabs = document.querySelectorAll('.subtab');
-      const subpanels = document.querySelectorAll('.subpanel');
-
-      function activateSubtab(button){
-        const materials = document.getElementById('sec-materials');
-        if(!materials) return;
-
-        const localTabs = materials.querySelectorAll('.subtab');
-        const localPanels = materials.querySelectorAll('.subpanel');
-
-        localTabs.forEach(t => {
-          t.setAttribute('aria-selected','false');
-          t.setAttribute('tabindex','-1');
-        });
-        localPanels.forEach(p => p.setAttribute('aria-hidden','true'));
-
-        button.setAttribute('aria-selected','true');
-        button.setAttribute('tabindex','0');
-
-        const panelId = button.getAttribute('aria-controls');
-        const panel = document.getElementById(panelId);
-        if(panel) panel.setAttribute('aria-hidden','false');
-      }
-
-      subtabs.forEach(btn => {
-        btn.addEventListener('click', () => activateSubtab(btn));
-        
-        btn.addEventListener('keydown', (e) => {
-          const list = Array.from(subtabs);
-          const i = list.indexOf(btn);
-
-          if(e.key === 'ArrowRight') {
-            e.preventDefault();
-            list[(i+1) % list.length].focus();
-          }
-          if(e.key === 'ArrowLeft') {
-            e.preventDefault();
-            list[(i-1 + list.length) % list.length].focus();
-          }
-          if(e.key === 'Home') {
-            e.preventDefault();
-            list[0].focus();
-          }
-          if(e.key === 'End') {
-            e.preventDefault();
-            list[list.length-1].focus();
-          }
-          if(e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            activateSubtab(btn);
           }
         });
       });
@@ -826,7 +650,6 @@
           }
         });
       }, { threshold: .14 });
-
       document.querySelectorAll('.project-card').forEach(c => io.observe(c));
 
       const form = document.getElementById('contacto');
@@ -857,7 +680,7 @@
             } else {
               alert('No se ha podido enviar. Inténtalo de nuevo.');
             }
-          } catch(err) {
+          } catch(err){
             console.error('Error:', err);
             alert('Error de red. Inténtalo más tarde.');
           } finally {
@@ -865,7 +688,6 @@
           }
         });
       }
-
     });
   </script>
 </body>
