@@ -256,6 +256,40 @@
       *{scroll-behavior:auto !important}
       .project-card, .logo-hero img, .highlight-icon{animation:none !important; transition:none !important}
     }
+    /* ===== Subtabs en Proyectos: Manuales / Ejercicios ===== */
+.subnav{
+  position: sticky;
+  top: 64px; /* debajo del nav principal */
+  background: rgba(255,255,255,.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 6px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  z-index: 4;
+  margin: 12px 0 18px;
+}
+
+.subtab{
+  padding: .55rem .85rem;
+  border-radius: 12px;
+  color: var(--color-muted);
+  transition: background .2s ease, transform .2s ease;
+}
+
+.subtab[aria-selected="true"], .subtab:hover{
+  background: #fff;
+  color: var(--color-ink);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 6px 18px rgba(30,74,174,.08);
+}
+.subtab:active{ transform: scale(.98); }
+
+.subpanel{ display:none; }
+.subpanel[aria-hidden="false"]{ display:block; }
+
   </style>
 </head>
 
@@ -453,280 +487,307 @@
         </div>
       </article>
 
-      <!-- PORTFOLIO -->
-      <article id="sec-portfolio" class="section" role="tabpanel" aria-labelledby="tab-portfolio" aria-hidden="true">
-        <h2 class="h2">Proyectos</h2>
-        <p class="lead">Selección de trabajos docentes y materiales de apoyo (front-end y back-end).</p>
+     <!-- PORTFOLIO -->
+<article id="sec-portfolio" class="section" role="tabpanel" aria-labelledby="tab-portfolio" aria-hidden="true">
+  <h2 class="h2">Proyectos</h2>
+  <p class="lead">Materiales docentes y ejercicios prácticos (front-end y back-end).</p>
 
-        <section class="projects-static" aria-label="Listado de proyectos">
-          <!-- 1 -->
-          <article class="project-card">
-            <a class="project-media" href="https://bootstrapyanimaciones.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="boot.png" alt="Lecciones para clase: HTML, CSS y Bootstrap — portada" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Lecciones para clase. HTML &amp; CSS y Bootstrap
-                <span class="badge"><ion-icon name="code-slash"></ion-icon> Front-end</span>
-              </h3>
-              <p class="project-desc">Lecciones y prácticas para aprender HTML, CSS y Bootstrap con un enfoque aplicado.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://bootstrapyanimaciones.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-                <a class="btn-chip" href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-               <!-- 1 -->
-          <article class="project-card">
-            <a class="project-media" href="https://bootstrapyanimaciones.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="html.png" alt="Lecciones para clase: HTML, CSS y Bootstrap — portada" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Manual completo de HTML
-                <span class="badge"><ion-icon name="code-slash"></ion-icon> Front-end</span>
-              </h3>
-              <p class="project-desc">Aprendemos HTML desde cero </p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://cursohtml1841.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-                <a class="btn-chip" href="https://github.com/inma2709/cursohtml/tree/main/html1841" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
+  <!-- Subtabs -->
+  <nav class="subnav" role="tablist" aria-label="Filtrado de proyectos">
+    <button class="subtab" role="tab" aria-selected="true" aria-controls="panel-manuales" id="subtab-manuales" tabindex="0">
+      Manuales
+    </button>
+    <button class="subtab" role="tab" aria-selected="false" aria-controls="panel-ejercicios" id="subtab-ejercicios" tabindex="-1">
+      Ejercicios
+    </button>
+    <button class="subtab" role="tab" aria-selected="false" aria-controls="panel-proyectos" id="subtab-proyectos" tabindex="-1">
+      Proyectos / Demos
+    </button>
+  </nav>
 
-          <!-- 2 -->
-          <article class="project-card">
-            <a class="project-media" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer">
-              <img src="js.png" alt="Ahora JavaScript — portada" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Ahora JavaScript
-                <span class="badge"><ion-icon name="flash-outline"></ion-icon> JS</span>
-              </h3>
-              <p class="project-desc">Ejercicios y retos para afianzar JavaScript desde nivel inicial a intermedio.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Netlify</a>
-                <a class="btn-chip" href="https://github.com/inma2709/javascript" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 3 -->
-          <article class="project-card">
-            <a class="project-media" href="https://react-lac-beta-68.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="react2.png" alt="React — componentes básicos — portada" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">React — Componentes básicos
-                <span class="badge"><ion-icon name="logo-react"></ion-icon> React</span>
-              </h3>
-              <p class="project-desc">Estados, props y rutas con Vite para proyectos educativos.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://react-lac-beta-68.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-                <a class="btn-chip" href="https://github.com/inma2709/react" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 7 -->
-          <article class="project-card">
-            <a class="project-media" href="https://despliegue-ten-pink.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="despliegue.png" alt="Despliegue de aplicaciones web — portada" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Despliegue de aplicaciones web
-                <span class="badge"><ion-icon name="cloud-upload-outline"></ion-icon> Deploy</span>
-              </h3>
-              <p class="project-desc">Publicación de proyectos en producción con Vercel, Git y flujos de despliegue.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://despliegue-ten-pink.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-                <a class="btn-chip" href="https://github.com/inma2709/despliegue" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 8 -->
-          <article class="project-card">
-            <a class="project-media" href="https://sql-gules-seven.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="sql.png" alt="Manual de SQL — portada" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Manual de SQL
-                <span class="badge"><ion-icon name="server-outline"></ion-icon> Bases de datos</span>
-              </h3>
-              <p class="project-desc">Manual práctico de SQL con ejemplos, consultas y ejercicios.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://sql-gules-seven.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-                <a class="btn-chip" href="https://github.com/inma2709/sql" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 9 -->
-          <article class="project-card">
-            <a class="project-media" href="https://nomenclatura-ivory.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="nomenclatura.png" alt="Nomenclatura de archivos y carpetas — portada" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Nomenclatura de archivos y carpetas
-                <span class="badge"><ion-icon name="folder-outline"></ion-icon> Buenas prácticas</span>
-              </h3>
-              <p class="project-desc">Guía de buenas prácticas para nombrar archivos y carpetas en proyectos.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://nomenclatura-ivory.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-                <a class="btn-chip" href="https://github.com/inma2709/nomenclatura" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 10 -->
-          <article class="project-card">
-            <a class="project-media" href="https://mongoo-manual.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="mongodb.png" alt="Manual de MongoDB — portada" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Manual de MongoDB
-                <span class="badge"><ion-icon name="leaf-outline"></ion-icon> NoSQL</span>
-              </h3>
-              <p class="project-desc">Manual práctico de MongoDB con ejemplos y ejercicios aplicados.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://mongoo-manual.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-                <a class="btn-chip" href="https://github.com/inma2709/MongooManual" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 11 -->
-          <article class="project-card">
-            <a class="project-media" href="https://entorno-servidor-71vh.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="nodejs.png" alt="Entorno servidor con Node.js — portada" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Entorno servidor con Node.js
-                <span class="badge"><ion-icon name="hardware-chip-outline"></ion-icon> UF1844</span>
-              </h3>
-              <p class="project-desc">Entorno servidor con Node.js: configuración, rutas y fundamentos backend.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://entorno-servidor-71vh.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-                <a class="btn-chip" href="https://github.com/inma2709/entornoServidor" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 12 -->
-          <article class="project-card">
-            <a class="project-media" href="https://github.com/inma2709/crudCanciones" target="_blank" rel="noreferrer">
-              <img src="crud-canciones.png" alt="CRUD Canciones — aplicación Full Stack" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">CRUD Canciones
-                <span class="badge"><ion-icon name="construct-outline"></ion-icon> UF1844</span>
-              </h3>
-              <p class="project-desc">Aplicación Full Stack con Node.js y Express para gestionar canciones con persistencia en JSON.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://github.com/inma2709/crudCanciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 13 -->
-          <article class="project-card">
-            <a class="project-media" href="https://github.com/inma2709/bazarCompleto" target="_blank" rel="noreferrer">
-              <img src="bazar-fullstack.png" alt="Bazar Full Stack — backend y frontend" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Bazar Full Stack
-                <span class="badge"><ion-icon name="layers-outline"></ion-icon> Full Stack</span>
-              </h3>
-              <p class="project-desc">Backend Node/Express con SQL y dos frontends: React y HTML/CSS.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://github.com/inma2709/bazarCompleto" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 14 -->
-          <article class="project-card">
-            <a class="project-media" href="https://github.com/inma2709/ejercicioSenderos" target="_blank" rel="noreferrer">
-              <img src="senderos.png" alt="Senderos — ejercicio backend con Node.js" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Senderos
-                <span class="badge"><ion-icon name="trail-sign-outline"></ion-icon> Backend</span>
-              </h3>
-              <p class="project-desc">Frontend HTML/CSS y backend Node/Express con persistencia en JSON.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://github.com/inma2709/ejercicioSenderos" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 15 -->
-          <article class="project-card">
-            <a class="project-media" href="https://github.com/inma2709/ejercicioMongoo" target="_blank" rel="noreferrer">
-              <img src="ejercicio-mongodb.png" alt="Ejercicio MongoDB — aplicación Full Stack" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Ejercicio MongoDB
-                <span class="badge"><ion-icon name="leaf-outline"></ion-icon> NoSQL</span>
-              </h3>
-              <p class="project-desc">Frontend HTML/CSS y backend Node/Express con persistencia en MongoDB.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://github.com/inma2709/ejercicioMongoo" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 16 -->
-          <article class="project-card">
-            <a class="project-media" href="https://giphy-one-alpha.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="giphy-api.png" alt="Consumo de API externa con GIPHY — aplicación web" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Consumo de API externa (GIPHY)
-                <span class="badge"><ion-icon name="swap-horizontal-outline"></ion-icon> API</span>
-              </h3>
-              <p class="project-desc">Consumo de API pública con fetch y async/await para mostrar resultados dinámicos.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://giphy-one-alpha.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-                <a class="btn-chip" href="https://github.com/inma2709/giphy" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 17 -->
-          <article class="project-card">
-            <a class="project-media" href="https://uf1843uxyaccesibilidad.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="accesibilidad-ux.png" alt="Usabilidad y Accesibilidad Web — UF1843" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Usabilidad y Accesibilidad Web
-                <span class="badge"><ion-icon name="accessibility-outline"></ion-icon> UF1843</span>
-              </h3>
-              <p class="project-desc">Manual sobre usabilidad, accesibilidad, estándares y buenas prácticas de diseño inclusivo.</p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://uf1843uxyaccesibilidad.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-                <a class="btn-chip" href="https://github.com/inma2709/uf1843uxyaccesibilidad" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-              </div>
-            </div>
-          </article>
-           <article class="project-card">
-            <a class="project-media" href="https://bootstrapyanimaciones.vercel.app/" target="_blank" rel="noreferrer">
-              <img src="repaso.png" alt="Recursos de Repaso · HTML, CSS, JS, React, Git, WordPress y Backend" loading="lazy" decoding="async">
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Repaso con cursos online y ejercicios
-                <span class="badge"><ion-icon name="code-slash"></ion-icon> Front-end</span>
-              </h3>
-              <p class="project-desc">Recopilacion de cursos online y manuales </p>
-              <div class="project-links">
-                <a class="btn-chip" href="https://repasodiciembre.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
-              
-              </div>
-            </div>
-          </article>
-        </section>
-
-       
+  <!-- PANEL: MANUALES -->
+  <section id="panel-manuales" class="subpanel" role="tabpanel" aria-labelledby="subtab-manuales" aria-hidden="false">
+    <section class="projects-static" aria-label="Manuales">
+      <!-- Manual HTML -->
+      <article class="project-card">
+        <a class="project-media" href="https://cursohtml1841.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="html.png" alt="Manual completo de HTML — portada" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Manual completo de HTML
+            <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
+          </h3>
+          <p class="project-desc">Aprendemos HTML desde cero con ejemplos y práctica guiada.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://cursohtml1841.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+            <a class="btn-chip" href="https://github.com/inma2709/cursohtml/tree/main/html1841" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
       </article>
+
+      <!-- Manual SQL -->
+      <article class="project-card">
+        <a class="project-media" href="https://sql-gules-seven.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="sql.png" alt="Manual de SQL — portada" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Manual de SQL
+            <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
+          </h3>
+          <p class="project-desc">Manual práctico de SQL con ejemplos, consultas y ejercicios.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://sql-gules-seven.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+            <a class="btn-chip" href="https://github.com/inma2709/sql" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Manual MongoDB -->
+      <article class="project-card">
+        <a class="project-media" href="https://mongoo-manual.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="mongodb.png" alt="Manual de MongoDB — portada" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Manual de MongoDB
+            <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
+          </h3>
+          <p class="project-desc">Manual práctico de MongoDB con ejemplos y ejercicios aplicados.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://mongoo-manual.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+            <a class="btn-chip" href="https://github.com/inma2709/MongooManual" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Manual UF1843 -->
+      <article class="project-card">
+        <a class="project-media" href="https://uf1843uxyaccesibilidad.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="accesibilidad-ux.png" alt="Usabilidad y Accesibilidad Web — UF1843" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Usabilidad y Accesibilidad Web
+            <span class="badge"><ion-icon name="book-outline"></ion-icon> Manual</span>
+          </h3>
+          <p class="project-desc">Manual sobre usabilidad, accesibilidad, estándares y buenas prácticas de diseño inclusivo.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://uf1843uxyaccesibilidad.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+            <a class="btn-chip" href="https://github.com/inma2709/uf1843uxyaccesibilidad" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Nomenclatura -->
+      <article class="project-card">
+        <a class="project-media" href="https://nomenclatura-ivory.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="nomenclatura.png" alt="Nomenclatura de archivos y carpetas — portada" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Nomenclatura de archivos y carpetas
+            <span class="badge"><ion-icon name="book-outline"></ion-icon> Guía</span>
+          </h3>
+          <p class="project-desc">Buenas prácticas para nombrar archivos y carpetas en proyectos.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://nomenclatura-ivory.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+            <a class="btn-chip" href="https://github.com/inma2709/nomenclatura" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Despliegue -->
+      <article class="project-card">
+        <a class="project-media" href="https://despliegue-ten-pink.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="despliegue.png" alt="Despliegue de aplicaciones web — portada" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Despliegue de aplicaciones web
+            <span class="badge"><ion-icon name="book-outline"></ion-icon> Guía</span>
+          </h3>
+          <p class="project-desc">Publicación de proyectos en producción con Vercel, Git y flujos de despliegue.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://despliegue-ten-pink.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+            <a class="btn-chip" href="https://github.com/inma2709/despliegue" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </section>
+
+  <!-- PANEL: EJERCICIOS -->
+  <section id="panel-ejercicios" class="subpanel" role="tabpanel" aria-labelledby="subtab-ejercicios" aria-hidden="true">
+    <section class="projects-static" aria-label="Ejercicios">
+      <!-- Ahora JavaScript -->
+      <article class="project-card">
+        <a class="project-media" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer">
+          <img src="js.png" alt="Ahora JavaScript — ejercicios" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Ahora JavaScript
+            <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicios</span>
+          </h3>
+          <p class="project-desc">Ejercicios y retos para afianzar JavaScript de inicial a intermedio.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://ahorajavascript.netlify.app" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Netlify</a>
+            <a class="btn-chip" href="https://github.com/inma2709/javascript" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ejercicio Senderos -->
+      <article class="project-card">
+        <a class="project-media" href="https://github.com/inma2709/ejercicioSenderos" target="_blank" rel="noreferrer">
+          <img src="senderos.png" alt="Senderos — ejercicio backend" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Senderos
+            <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicio</span>
+          </h3>
+          <p class="project-desc">Frontend HTML/CSS y backend Node/Express con persistencia en JSON.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://github.com/inma2709/ejercicioSenderos" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ejercicio MongoDB -->
+      <article class="project-card">
+        <a class="project-media" href="https://github.com/inma2709/ejercicioMongoo" target="_blank" rel="noreferrer">
+          <img src="ejercicio-mongodb.png" alt="Ejercicio MongoDB — full stack" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Ejercicio MongoDB
+            <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicio</span>
+          </h3>
+          <p class="project-desc">Frontend HTML/CSS y backend Node/Express con persistencia en MongoDB.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://github.com/inma2709/ejercicioMongoo" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CRUD Canciones -->
+      <article class="project-card">
+        <a class="project-media" href="https://github.com/inma2709/crudCanciones" target="_blank" rel="noreferrer">
+          <img src="crud-canciones.png" alt="CRUD Canciones — full stack" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">CRUD Canciones
+            <span class="badge"><ion-icon name="create-outline"></ion-icon> Ejercicio</span>
+          </h3>
+          <p class="project-desc">Node.js + Express para gestionar canciones con persistencia en JSON.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://github.com/inma2709/crudCanciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </section>
+
+  <!-- PANEL: PROYECTOS / DEMOS -->
+  <section id="panel-proyectos" class="subpanel" role="tabpanel" aria-labelledby="subtab-proyectos" aria-hidden="true">
+    <section class="projects-static" aria-label="Proyectos y demos">
+      <!-- Lecciones + Bootstrap -->
+      <article class="project-card">
+        <a class="project-media" href="https://bootstrapyanimaciones.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="boot.png" alt="Lecciones para clase: HTML, CSS y Bootstrap" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Lecciones para clase: HTML &amp; CSS + Bootstrap
+            <span class="badge"><ion-icon name="rocket-outline"></ion-icon> Demo</span>
+          </h3>
+          <p class="project-desc">Lecciones y prácticas aplicadas para aprender maquetación y Bootstrap.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://bootstrapyanimaciones.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+            <a class="btn-chip" href="https://github.com/inma2709/bootstrapyanimaciones" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- React básicos -->
+      <article class="project-card">
+        <a class="project-media" href="https://react-lac-beta-68.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="react2.png" alt="React — componentes básicos" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">React — Componentes básicos
+            <span class="badge"><ion-icon name="rocket-outline"></ion-icon> Demo</span>
+          </h3>
+          <p class="project-desc">Estados, props y rutas con Vite para proyectos educativos.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://react-lac-beta-68.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+            <a class="btn-chip" href="https://github.com/inma2709/react" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bazar Full Stack -->
+      <article class="project-card">
+        <a class="project-media" href="https://github.com/inma2709/bazarCompleto" target="_blank" rel="noreferrer">
+          <img src="bazar-fullstack.png" alt="Bazar Full Stack" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Bazar Full Stack
+            <span class="badge"><ion-icon name="layers-outline"></ion-icon> Full Stack</span>
+          </h3>
+          <p class="project-desc">Backend Node/Express con SQL y dos frontends: React y HTML/CSS.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://github.com/inma2709/bazarCompleto" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GIPHY -->
+      <article class="project-card">
+        <a class="project-media" href="https://giphy-one-alpha.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="giphy-api.png" alt="Consumo de API externa con GIPHY" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Consumo de API externa (GIPHY)
+            <span class="badge"><ion-icon name="rocket-outline"></ion-icon> Demo</span>
+          </h3>
+          <p class="project-desc">API pública con fetch y async/await para mostrar resultados dinámicos.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://giphy-one-alpha.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+            <a class="btn-chip" href="https://github.com/inma2709/giphy" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Repaso -->
+      <article class="project-card">
+        <a class="project-media" href="https://repasodiciembre.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="repaso.png" alt="Repaso con cursos online y ejercicios" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Repaso con cursos online y ejercicios
+            <span class="badge"><ion-icon name="rocket-outline"></ion-icon> Recursos</span>
+          </h3>
+          <p class="project-desc">Recopilación de cursos online, ejercicios y materiales de refuerzo.</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://repasodiciembre.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Entorno servidor Node (puede ser manual o demo; lo dejo aquí por ser “tema”) -->
+      <article class="project-card">
+        <a class="project-media" href="https://entorno-servidor-71vh.vercel.app/" target="_blank" rel="noreferrer">
+          <img src="nodejs.png" alt="Entorno servidor con Node.js" loading="lazy" decoding="async">
+        </a>
+        <div class="project-body">
+          <h3 class="project-title">Entorno servidor con Node.js
+            <span class="badge"><ion-icon name="rocket-outline"></ion-icon> Tema</span>
+          </h3>
+          <p class="project-desc">Configuración, rutas y fundamentos backend (UF1844).</p>
+          <div class="project-links">
+            <a class="btn-chip" href="https://entorno-servidor-71vh.vercel.app/" target="_blank" rel="noreferrer"><ion-icon name="globe-outline"></ion-icon> Web / Vercel</a>
+            <a class="btn-chip" href="https://github.com/inma2709/entornoServidor" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </section>
+
+</article>
 
       <!-- CONTACTO -->
       <article id="sec-contact" class="section" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
@@ -858,6 +919,44 @@
         }
       });
     }
+    <script>
+  /* ===== Subtabs de Proyectos (Manuales / Ejercicios / Proyectos) ===== */
+  const subtabs = document.querySelectorAll('.subtab');
+  const subpanels = document.querySelectorAll('.subpanel');
+
+  function activateSubtab(button){
+    subtabs.forEach(t => {
+      t.setAttribute('aria-selected','false');
+      t.setAttribute('tabindex','-1');
+    });
+    subpanels.forEach(p => p.setAttribute('aria-hidden','true'));
+
+    button.setAttribute('aria-selected','true');
+    button.setAttribute('tabindex','0');
+
+    const panelId = button.getAttribute('aria-controls');
+    document.getElementById(panelId).setAttribute('aria-hidden','false');
+  }
+
+  subtabs.forEach(btn => {
+    btn.addEventListener('click', () => activateSubtab(btn));
+    btn.addEventListener('keydown', (e) => {
+      const list = [...subtabs];
+      const i = list.indexOf(btn);
+
+      if(e.key === 'ArrowRight') { list[(i+1)%list.length].focus(); }
+      if(e.key === 'ArrowLeft')  { list[(i-1+list.length)%list.length].focus(); }
+      if(e.key === 'Home')       { list[0].focus(); }
+      if(e.key === 'End')        { list[list.length-1].focus(); }
+
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        activateSubtab(btn);
+      }
+    });
+  });
+</script>
+
   </script>
 </body>
 </html>
